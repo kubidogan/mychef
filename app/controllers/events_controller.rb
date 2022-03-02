@@ -24,8 +24,8 @@ class EventsController < ApplicationController
       :price,
       :event_time,
       :address,
-      :capacity
-      # photos: []
+      :capacity,
+      photos: []
     )
   end
 end
