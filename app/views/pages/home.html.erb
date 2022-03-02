@@ -1,30 +1,28 @@
 <div class="container">
   <div class="container-homepage-title">
     <h1 class="landing-title">MyChef</h1>
-      <div class="search-bar">
-        <%= link_to "EXPLORE", chefs_path %>
-      </div>
-    </div>
+    <%= link_to "Explore", chefs_path, class: "btn-explore" %>
+  </div>
   <div class="container-trending">
     <h2 class="trending-title">Trending in your area</h2>
-    <%= link_to "Profile", myprofile_path %>
   </div>
-  <div class= "container-value-find">
+  <div class= "container-value">
     <div class="value-find">
       <h2><span class="find-text">Find</span> your favourite chefs</h2>
     </div>
-    <%= image_tag "value_find_card.png", class: "value_find_card" %>
+    <%= image_tag "value_find_card.png", class: "value_card" %>
   </div>
-  <div class= "container-value-reward">
+  <div class= "container-value">
     <div class="value-reward">
       <h2><span class="reward-text">Reward</span> your chefs</h2>
     </div>
-    <%= image_tag "value_reward_card.png", class: "value_reward_card" %>
+    <%= image_tag "value_reward_card.png", class: "value_card" %>
   </div>
-    <div class= "container-value-follow">
+    <div class= "container-value">
     <div class="value-follow">
       <h2><span class="follow-text">Follow</span> your chefs and receive updates</h2>
     </div>
-    <%= image_tag "value_follow_card.png", class: "value_follow_card" %>
+    <%= image_tag "value_follow_card.png", class: "value_card" %>
   </div>
+    <%# <%= link_to "Profile", myprofile_path %>
 </div>
