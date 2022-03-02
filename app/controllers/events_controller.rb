@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    if @event.save!
+    if @event.save
       redirect_to myprofile_path
     else
       render :new
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
       :event_time,
       :address,
       :capacity,
-      photos: []
+      :photo
     )
   end
 end
