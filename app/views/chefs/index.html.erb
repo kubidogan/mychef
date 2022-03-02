@@ -1,0 +1,17 @@
+<h1>CHEFS</h1>
+
+<%= form_tag chefs_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Chef"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<% @users.each do |chef| %>
+<%= chef.name %>
+<%= chef.cuisine %>
+<%= chef.price %>
+<%= link_to "VIEW", chef_path(chef) %>
+<% end %>
