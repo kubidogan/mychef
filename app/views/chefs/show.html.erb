@@ -1,9 +1,52 @@
-<h1>SPECIFIC CHEF</h1>
-<button class="btn btn-succes"></button>
-<ul>
-<li><%= @user.name %></li>
-<li><%= @user.bio %></li>
-<li><%= @user.address  %></li>
-</ul>
-
-<%= link_to "BACK", chefs_path %>
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light"><%= @user.name %></h1>
+        <p class="lead text-muted"><%= @user.bio %></p>
+        <p>
+          <%= link_to "Follow", chefs_path, class: "btn btn-primary my-2"%>
+          <%= link_to "Back", chefs_path, class: "btn btn-secondary my-2"%>
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <button type="button" class="btn btn-sm btn-outline-secondary">Events</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary">Experience</button>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+        <h2>Upcoming Events</h2>
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"></svg>
+              <div class="card-body">
+                <P>SOME TEXT</P>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p>
+                    <%= link_to "Attend Event", chefs_path, class: "btn btn-primary my-2"%>
+                  </p>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+          </div>
+        <h2>Past Events</h2>
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"></svg>
+              <div class="card-body">
+                <P>SOME TEXT</P>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <p>
+                      <%= link_to "Attend Event", chefs_path, class: "btn btn-primary my-2"%>
+                    </p>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
