@@ -1,12 +1,13 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
+    @user = User.find(params[:chef_id])
   end
 
   def create
     @review = Review.new(review_params)
-    @review.reviewee = current_user
-    @review.reviewer = User.find(params[:user_id])
+    @review.reviewee = User.find(params[:chef_id])
+    @review.reviewer = current_user
     if @review.save
       redirect_to chef_path(@user)
     else
