@@ -2,8 +2,9 @@
 <%= link_to "Create Event", new_event_path %>
 <%= link_to "Add Experience", myprofile_experiences_new_path %>
 
-
-
+<% current_user.resumes.each do |section| %>
+<p><%= section.experience %> | <%= section.start_date %> - <%= section.start_date %></p>
+<% end %>
 
 <%# <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
