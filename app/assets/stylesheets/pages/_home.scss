@@ -58,8 +58,9 @@
   // align-items: center;
 }
 
-.find_text {
-
+.find-text {
+  text-underline-position: below;
+  color: #123F37
 }
 
 .container-value-reward{
@@ -83,6 +84,10 @@
   // align-items: center;
 }
 
+.reward-text {
+
+}
+
 .container-value-follow {
   background-color: #4FFEBE;
   color: #123F37;
@@ -102,4 +107,8 @@
   height: 120px;
   width: 120px;
   // align-items: center;
+}
+
+.value-text {
+
 }
