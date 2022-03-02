@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/myprofile/experiences', to: 'resumes#create'
   get '/events/:event_id/new', to: 'bookings#new'
   post '/events/:event_id', to: 'bookings#create'
-  get '/chefs/:chef_id/review/new', to: 'reviews#new'
+  get '/chefs/:chef_id/review/new', to: 'reviews#new', as: :new_review
   post '/chefs/:chef_id/review', to: 'reviews#create'
 
   resources :events do
