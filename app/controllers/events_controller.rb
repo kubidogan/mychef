@@ -25,6 +25,7 @@ class EventsController < ApplicationController
       :event_time,
       :address,
       :capacity
+      # photos: []
     )
   end
 end
