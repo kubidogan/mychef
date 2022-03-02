@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_152220) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "category"
     t.string "cuisine"
     t.boolean "status"
     t.integer "price"
