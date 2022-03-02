@@ -8,7 +8,7 @@ class ResumesController < ApplicationController
     @resume = Resume.new(resume_params)
     @resume.user = current_user
     if @resume.save!
-      redirect_to myprofile_path
+      redirect_to myprofile_path(current_user)
     else
       render :new
     end

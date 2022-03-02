@@ -2,6 +2,11 @@
 <%= link_to "Create Event", new_event_path %>
 <%= link_to "Add Experience", myprofile_experiences_new_path %>
 
+<% current_user.resumes.each do |section| %>
+<ul>
+<li><%= section.experience %> | <%= section.start_date %> - <%= section.end_date %></li>
+</ul>
+<% end %>
 
 <main>
 
