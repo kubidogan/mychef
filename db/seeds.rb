@@ -1,3 +1,4 @@
+
 require "uri"
 puts "cleaning db"
 User.destroy_all
