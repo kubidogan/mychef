@@ -7,7 +7,7 @@
     <%= f.input :event_time %>
     <%= f.input :capacity %>
     <%= f.input :category %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: "btn btn-primary" %>
     <%= link_to "Back", myprofile_path, class: "btn btn-secondary" %>
   <% end %>
