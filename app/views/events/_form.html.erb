@@ -1,10 +1,14 @@
-<%= simple_form_for @event do |f| %>
-  <%= f.input :name %>
-  <%= f.input :cuisine %>
-  <%= f.input :address, as: :text %>
-  <%= f.input :price %>
-  <%= f.input :event_time %>
-  <%= f.input :capacity %>
-  <%= f.input :category %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :name %>
+    <%= f.input :cuisine %>
+    <%= f.input :address, as: :text %>
+    <%= f.input :price %>
+    <%= f.input :event_time %>
+    <%= f.input :capacity %>
+    <%= f.input :category %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to "Back", myprofile_path, class: "btn btn-secondary" %>
+  <% end %>
+</div>

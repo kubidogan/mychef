@@ -3,29 +3,50 @@
 <%= link_to "Add Experience", myprofile_experiences_new_path %>
 
 
+<main>
 
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Events Below</h1>
+        <p class="lead text-muted">Description of events or upcoming.</p>
+        <p>
+          <%= link_to "Create New Event", new_event_path, class: "btn btn-primary my-2"%>
+          <%= link_to "Back To Feed", new_event_path, class: "btn btn-secondary my-2"%>
+        </p>
+      </div>
+    </div>
+  </section>
 
-<%# <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <% current_user.events.each do |event| %>
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225"></svg>
+              <div class="card-body">
+                <h3 class="card-name"><% event.name %></h3>
+                <h4 class="card-text"> <%= event.address %></h4>
+                <p class="card-text"> <%= event.cuisine %></p>
+                <p class="card-text"> <%= event.price %></p>
+                <p class="card-text"> <%= event.category %></p>
+                <p class="card-text"> <%= event.capacity %></p>
+                <p class="card-text"> <%= event.event_time %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</nav> %>
+
+</main>
