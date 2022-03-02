@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-  <head>
-    <link rel="stylesheets" href="style.css">
-    <div class="container">
-      <div class="container-homepage">
-        <h1 class="landing-title">MyChef</h1>
-        </div>
+<div class="container">
+  <div class="container-homepage-title">
+    <h1 class="landing-title">MyChef</h1>
+      <div class="search-bar">
+        <%= link_to "EXPLORE", chefs_path %>
+      </div>
     </div>
-  </head>
-  <body>
-    <div class="search-bar">
-      <%= link_to "EXPLORE", chefs_path %>
+  <div class="container-trending">
+    <h2 class="trending-title">Trending in your area</h2>
+    <%= link_to "Profile", myprofile_path %>
+  </div>
+  <div class= "container-value-find">
+    <div class="value-find">
+      <h2><span class="find-text">Find</span> your favourite chefs</h2>
     </div>
-      <h2 class="trending-title" style="margin-top: 70px;">TRENDING</h2>
-      <%= link_to "Profile", myprofile_path %>
-  </body>
-</html>
+    <%= image_tag "value_find_card.png", class: "value_find_card" %>
+  </div>
+  <div class= "container-value-reward">
+    <div class="value-reward">
+      <h2><span class="reward-text">Reward</span> your chefs</h2>
+    </div>
+    <%= image_tag "value_reward_card.png", class: "value_reward_card" %>
+  </div>
+    <div class= "container-value-follow">
+    <div class="value-follow">
+      <h2><span class="follow-text">Follow</span> your chefs and receive updates</h2>
+    </div>
+    <%= image_tag "value_follow_card.png", class: "value_follow_card" %>
+  </div>
+</div>
