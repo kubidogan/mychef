@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/events/:event_id', to: 'bookings#create'
   get '/chefs/:chef_id/review/new', to: 'reviews#new', as: :new_review
   post '/chefs/:chef_id/review', to: 'reviews#create'
+  get '/events/:event_id/confirmation', to: 'booking#confirmation', as: "booking_confirmation"
 
   resources :events do
     # resources :bookings, only: [:new, :create]
