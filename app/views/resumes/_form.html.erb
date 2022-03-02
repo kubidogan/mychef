@@ -1,4 +1,4 @@
-<%= simple_form_for @resume do |section| %>
+<%= simple_form_for @resume, url: myprofile_experiences_new_path do |section| %>
   <%= section.input :experience %>
   <%= section.input :start_date %>
   <%= section.input :end_date %>
