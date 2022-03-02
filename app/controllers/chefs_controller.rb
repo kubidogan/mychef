@@ -4,9 +4,9 @@ class ChefsController < ApplicationController
   def index
     # @users = User.where(type: 'Chef').reverse
     if params[:query].present?
-      @users = User.where(typeofuser: 'Chef').and(User.where(name: params[:query]))
+      @users = User.where(typeofuser: true).and(User.where("name ILIKE ?", "%#{params[:query]}%"))
     else
-      @users = User.where(typeofuser: 'Chef').reverse
+      @users = User.where(typeofuser: true).reverse
     end
   end
 
