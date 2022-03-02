@@ -4,46 +4,49 @@
   font-size: 50px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 20px;
 }
 
 .container-homepage-title {
-  // background-color: #123F37;
   border-radius: 10px;
-  padding: 50px;
+  padding: 15px;
+  height: 200px;
   margin: 25px;
   background-image: url("landing-title-card.jpg");
-  background-size: cover;
+  background-size: 100% 120%;
+  align-items: center;
+  position: relative;
 }
 
-.search-bar {
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
+
+.btn-explore {
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #4FFEBE;
+  text-decoration: none;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container-trending {
   background-color: #123F37;
   border-radius: 10px;
-  padding: 50px;
+  padding: 15px;
+  height: 500px;
   margin: 25px;
+  position: relative;
 }
 
 .trending-title {
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  // text-align: left;
-  margin-top: 70px;
-  align-items: flex-start;
-}
-
-.container-value-find {
-  background-color: #4FFEBE;
-  color: #123F37;
-  border-radius: 10px;
-  padding: 15px;
-  height: 200px;
-  margin: 25px;
+  position: absolute;
+  top: 5%;
+  right: 25%;
 }
 
 .value-find {
@@ -52,19 +55,20 @@
   font-size: 20px;
 }
 
-.value_find_card {
-  height: 120px;
-  width: 120px;
-  // align-items: center;
+.find-text {
+  text-decoration: underline;
+  text-decoration-color: #123F37;
+  font-weight: bold;
 }
 
-.container-value-reward{
-  background-color: #123F37;
-  color: #4FFEBE;
+.container-value {
+  background-color: #4FFEBE;
+  color: #123F37;
   border-radius: 10px;
   padding: 15px;
   height: 200px;
   margin: 25px;
+  position: relative;
 }
 
 .value-reward {
@@ -73,19 +77,19 @@
   font-size: 20px;
 }
 
-.value_reward_card {
+.value_card {
   height: 120px;
   width: 120px;
-  // align-items: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.container-value-follow {
-  background-color: #4FFEBE;
-  color: #123F37;
-  border-radius: 10px;
-  padding: 15px;
-  height: 200px;
-  margin: 25px;
+.reward-text {
+  text-decoration: underline;
+  text-decoration-color: #123F37;
+  font-weight: bold;
 }
 
 .value-follow {
@@ -94,8 +98,8 @@
   font-size: 20px;
 }
 
-.value_follow_card {
-  height: 120px;
-  width: 120px;
-  // align-items: center;
+.follow-text {
+  text-decoration: underline;
+  text-decoration-color: #123F37;
+  font-weight: bold;
 }
