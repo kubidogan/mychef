@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
   resources :posts, only: [:index, :new, :create, :destroy]
 
-  resources :users, only: [:index, :show], path: :chefs, as: :chefs, controller: :chefs do
+  resources :chefs, only: [:index, :show], path: :chefs, as: :chefs, controller: :chefs do
     member do
       post :follow
       post :unfollow
