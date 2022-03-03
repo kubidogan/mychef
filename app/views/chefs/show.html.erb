@@ -2,58 +2,67 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light"><%= @user.name %></h1>
+        <div class="chef-overview">
+        <div class="avatar rounded-circle"><img src='#'/></div>
+        <div class="follow-info-btn">
+          <p>❤️</p>
+          <%= link_to "Following", '#', class: "btn btn-primary my-2"%>
+        </div>
+        <div class="follow-info-btn">
+          <p>❤️</p>
+          <%= link_to "Followers", '#', class: "btn btn-primary my-2"%>
+        </div>
+        <h2 class="fw-light text-start"><%= @user.name %></h2>
+        </div>
         <p class="lead text-muted"><%= @user.bio %></p>
-        <p>
-          <%= link_to "Follow Chef", chefs_path, class: "btn btn-primary my-2"%>
-          <%= link_to "Leave a review", new_review_path(@user), class: "btn btn-primary my-2"%>
-        </p>
+          <%= link_to "Follow Chef", follow_chef_path(@user), class: "btn btn-secondary my-2"%>
+          <%= link_to "Leave a review", new_review_path(@user), class: "btn btn-secondary my-2"%>
       </div>
-    </div>
-  </section>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-event-tab" data-bs-toggle="pill" data-bs-target="#pills-event" type="button" role="tab" aria-controls="pills-event" aria-selected="true">Events</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-review-tab" data-bs-toggle="pill" data-bs-target="#pills-review" type="button" role="tab" aria-controls="pills-review" aria-selected="false">Reviews</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-experience-tab" data-bs-toggle="pill" data-bs-target="#pills-experience" type="button" role="tab" aria-controls="pills-experience" aria-selected="false">Experience</button>
-        </li>
-      </ul>
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-            <h2>Upcoming Events</h2>
-                    <% @user.events.each do |event| %>
-                      <% if %>
-                        <% !event.status? %>
-                          <div class="card shadow-sm">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
-                              <div class="card-body">
-                                <%= event.name %>
-                                <%= event.event_time %>
-                                <%= event.price %>
-                                <%= event.cuisine %>
-                                <%= event.category %>
-                                  <div class="d-flex justify-content-between align-items-center">
-                                  <% if event.capacity > event.bookings.count %>
-                                    <%= simple_form_for [event, @booking] do |f| %>
+    </section>
+    <section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-event-tab" data-bs-toggle="pill" data-bs-target="#pills-event" type="button" role="tab" aria-controls="pills-event" aria-selected="true">Events</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-review-tab" data-bs-toggle="pill" data-bs-target="#pills-review" type="button" role="tab" aria-controls="pills-review" aria-selected="false">Reviews</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-experience-tab" data-bs-toggle="pill" data-bs-target="#pills-experience" type="button" role="tab" aria-controls="pills-experience" aria-selected="false">Experience</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent" >
+          <div class="tab-pane fade show active" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col">
+                <h2 class="event-banner"><u class="underline-highlight">Upcoming Events</u></h2>
+                        <% @user.events.each do |event| %>
+                          <% if %>
+                            <% !event.status? %>
+                              <div class="card shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
+                                  <div class="card-body">
+                                    <%= event.name %>
+                                    <%= event.event_time %>
+                                    <%= event.price %>
+                                    <%= event.cuisine %>
+                                    <%= event.category %>
+                                      <div class="d-flex justify-content-between align-items-center">
+                                      <% if event.capacity > event.bookings.count %>
+                                      <%= simple_form_for [event, @booking] do |f| %>
                                       <%= f.button :submit, "Attend event", class: "btn btn-primary my-2" %>
-                                    <% end %>
-                                    <% else %>
-                                    <p>The event is fully booked</p>
-                                    <% end %>
+                                      <% end %>
+                                      <% else %>
+                                      <p>The event is fully booked</p>
+                                      <% end %>
+                                    </div>
                                   </div>
                               </div>
-                          </div>
-                        <% else %>
-                      <% end %>
-                    <% end %>
+                          <% end %>
+                        <% end %>
+              </div>
 
             <h2>Past Events</h2>
               <div class="card shadow-sm">
@@ -62,46 +71,43 @@
                     <P>SOME TEXT</P>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <p>
-                          <%# <%= link_to "Attend Event", new_event_booking_path, class: "btn btn-primary my-2"%> %>
-                        </p>
+                        </div>
                       </div>
-                    </div>
                   </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
-        <div class="card shadow-sm">
-          <div class="card-body">
-          <h2>Reviews still coming</h2>
-           <% @user.reviewee_relationships.each do |review| %>
-            <ul>
-             <li><%= review.comment %></li>
-             <li><%= review.rating %></li>
-            </ul>
-          <% end %>
-            <div class="d-flex justify-content-between align-items-center">
+          <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+          <div class="card shadow-sm">
+            <div class="card-body">
+            <h2 class="event-banner">Reviews still coming</h2>
+            <% @user.reviewee_relationships.each do |review| %>
+              <ul>
+              <li><%= review.comment %></li>
+              <li><%= review.rating %></li>
+              </ul>
+            <% end %>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
             </div>
           </div>
-        </div>
-        </div>
-        <div class="tab-pane fade" id="pills-experience" role="tabpanel" aria-labelledby="pills-experience-tab">
-        <h2>Experience</h2>
-        <div class="card shadow-sm">
-           <div class="card-body">
-           <% @user.resumes.each do |section| %>
-           <ul>
-           <li><%= section.experience %> | <%= section.start_date %> - <%= section.end_date %></li>
-           </ul>
-           <% end %>
-             <div class="d-flex justify-content-between align-items-center">
-             </div>
           </div>
-        </div>
+          <div class="tab-pane fade" id="pills-experience" role="tabpanel" aria-labelledby="pills-experience-tab">
+          <h2 class="event-banner"><u class="underline-highlight"> Experience</u> </h2>
+          <div class="card shadow-sm">
+            <div class="card-body">
+            <% @user.resumes.each do |section| %>
+            <ul>
+            <li><%= section.experience %> | <%= section.start_date %> - <%= section.end_date %></li>
+            </ul>
+            <% end %>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </main>
