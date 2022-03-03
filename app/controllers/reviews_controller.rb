@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review.reviewee = User.find(params[:chef_id])
     @review.reviewer = current_user
     if @review.save
-      redirect_to chef_path(@user)
+      redirect_to chef_path(@review.reviewee)
     else
       render :new
     end

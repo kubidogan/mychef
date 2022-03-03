@@ -2,7 +2,7 @@ body {
   margin: 0 0 55px 0;
 }
 
-.nav {
+.bottom-nav {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -11,7 +11,13 @@ body {
   background-color: #123F37;
   display: flex;
   overflow-x: auto;
-  z-index: 100;
+  z-index: 1;
+}
+
+.nav-pills {
+  display: flex;
+  justify-content: center;
+
 }
 
 .nav__link {
