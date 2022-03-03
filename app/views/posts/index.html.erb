@@ -1,14 +1,35 @@
-
 <div class="container">
-  <h1>News Feed</h1>
-  <%= link_to "Post", new_post_path %>
+  <div>
+    <h1>News Feed</h1>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+      <% @posts.all.each do |post| %>
+        <h1><%= post.user.name %> </h1>
+        <% if post.photo.attached? %>
+            <%= cl_image_tag post.photo.key, height: 225, width: 100, crop: :pad, class: "card-img-top"%>
+        <% end %>
+        <div class="card-body">
+          <h2><%= post.title %></h2>
+          <h3><%= post.text %></h3>
+          <%= post.created_at %>
+        </div>
+      <% end %>
+    </div>
 </div>
 
-<% @posts.all.each do |post| %>
-  <p>USER:<%= post.user.name %></p>
-  <%= cl_image_tag post.photo.key, height: 225, width: 100, crop: :pad, class: "card-img-top"%>
-  <%= post.title %>
-  <%= post.text %>
-  <%= post.created_at %>
-  <%= post.photo.key %>
-<% end %>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Post</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <%= render 'form', post: @post %>
+      </div>
+    </div>
+  </div>
+</div>
