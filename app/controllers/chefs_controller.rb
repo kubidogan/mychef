@@ -12,6 +12,7 @@ class ChefsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @booking = Booking.new
     # @events = Event.all
     # @reviews = Review.all
   end

@@ -41,7 +41,13 @@
                                 <%= event.cuisine %>
                                 <%= event.category %>
                                   <div class="d-flex justify-content-between align-items-center">
-                                    <p><%= link_to "Attend Event", chefs_path, class: "btn btn-primary my-2"%></p>
+                                  <% if event.capacity > event.bookings.count %>
+                                    <%= simple_form_for [event, @booking] do |f| %>
+                                      <%= f.button :submit, "Attend event", class: "btn btn-primary my-2" %>
+                                    <% end %>
+                                    <% else %>
+                                    <p>The event is fully booked</p>
+                                    <% end %>
                                   </div>
                               </div>
                           </div>
@@ -57,7 +63,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <p>
-                          <%= link_to "Attend Event", chefs_path, class: "btn btn-primary my-2"%>
+                          <%# <%= link_to "Attend Event", new_event_booking_path, class: "btn btn-primary my-2"%> %>
                         </p>
                       </div>
                     </div>
@@ -70,7 +76,7 @@
         <div class="card shadow-sm">
           <div class="card-body">
           <h2>Reviews still coming</h2>
-           <% @user.reviewer_relationships.each do |review| %>
+           <% @user.reviewee_relationships.each do |review| %>
             <ul>
              <li><%= review.comment %></li>
              <li><%= review.rating %></li>
