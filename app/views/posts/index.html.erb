@@ -1,24 +1,24 @@
-<div class="container">
+<div class="container feed">
   <div>
-    <h1>News Feed</h1>
+    <h1 id="feed-title">News Feed</h1>
   </div>
 
       <% @posts.all.each do |post| %>
-        <div class="card" style="width: 18rem;">
+        <div class="card card-feed" style="width: 18rem;">
           <% if post.photo.attached? %>
-              <%= cl_image_tag post.photo.key, height: 225, width: 100, crop: :pad, class: "card-img-top"%>
+              <%= cl_image_tag post.photo.key, height: 225, width: 100, class: "card-img-top"%>
           <% end %>
           <div class="card-body">
             <h5><%= post.user.name %> </h5>
             <p class="card-title"><%= post.title %></p>
             <p class="card-text"><%= post.text %></p>
-            <%= post.created_at %>
+            <p>Posted at: <%= post.created_at %></p>
           </div>
         </div>
       <% end %>
 </div>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Post</button>
+<button type="button" class="btn btn-secondary postbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Post</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
