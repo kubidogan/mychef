@@ -1,4 +1,4 @@
-<%= simple_form_for @review, url: new_review_path(@user) do |f| %>
+<%= simple_form_for @review, url: chef_reviews_path(@user) do |f| %>
   <%= f.input :rating, collection: 1..5 %>
   <%= f.input :comment, as: :text %>
   <%= f.button :submit, "Submit" %>

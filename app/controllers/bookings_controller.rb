@@ -4,11 +4,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
     @booking.user = current_user
     @booking.event = Event.find(params[:event_id])
     if @booking.save
-      redirect_to booking_confirmation_path(@event)
+      redirect_to booking_confirmation_path(@booking.event, @booking)
     else
       render :new
     end
@@ -16,10 +16,11 @@ class BookingsController < ApplicationController
 
   def confirmation
     @booking = Booking.find(params[:booking_id])
+  end
 
   private
 
-  def booking_params
-    params.require(:booking).permit(:user_id, :event_id)
-  end
+#   def booking_params
+#     params.require(:booking).permit(:user_id, :event_id)
+#   end
 end

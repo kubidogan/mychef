@@ -50,26 +50,27 @@
                                     <%= event.cuisine %>
                                     <%= event.category %>
                                       <div class="d-flex justify-content-between align-items-center">
-                                        <p><%= link_to "Attend Event", chefs_path, class: "btn btn-secondary my-2"%></p>
-                                      </div>
+                                      <% if event.capacity > event.bookings.count %>
+                                      <%= simple_form_for [event, @booking] do |f| %>
+                                      <%= f.button :submit, "Attend event", class: "btn btn-primary my-2" %>
+                                      <% end %>
+                                      <% else %>
+                                      <p>The event is fully booked</p>
+                                      <% end %>
+                                    </div>
                                   </div>
                               </div>
-                            <% else %>
                           <% end %>
                         <% end %>
               </div>
-              <div class="col">
-                <h2 class="event-banner"><u class="underline-highlight">Past Events</u></h2>
-                  <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
-                      <div class="card-body">
-                        <P>SOME TEXT</P>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <p>
-                              <%= link_to "Attend Event", chefs_path, class: "btn btn-secondary my-2"%>
-                            </p>
-                          </div>
+
+            <h2>Past Events</h2>
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
+                  <div class="card-body">
+                    <P>SOME TEXT</P>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
                         </div>
                       </div>
                   </div>
@@ -80,7 +81,7 @@
           <div class="card shadow-sm">
             <div class="card-body">
             <h2 class="event-banner">Reviews still coming</h2>
-            <% @user.reviewer_relationships.each do |review| %>
+            <% @user.reviewee_relationships.each do |review| %>
               <ul>
               <li><%= review.comment %></li>
               <li><%= review.rating %></li>
