@@ -1,5 +1,7 @@
 <%= simple_form_for @resume, url: myprofile_experiences_path do |section| %>
+  <%= section.input :title %>
   <%= section.input :experience %>
+  <%= section.input :location %>
   <%= section.input :start_date %>
   <%= section.input :end_date %>
   <%= section.submit %>
