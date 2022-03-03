@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   has_many :resumes, dependent: :destroy
   has_many :events, dependent: :destroy
-
+  has_many :posts, dependent: :destroy
   has_many :reviewer_relationships, foreign_key: :reviewer_id, class_name: 'Review'
   has_many :reviewers, through: :reviewer_relationships, source: :reviewer
 

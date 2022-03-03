@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h1>News Feed</h1>
+  <%= link_to "Post", new_post_path %>
+</div>
+
+<% @posts.all.each do |post| %>
+  <p>USER:<%= post.user.name %></p>
+  <%= cl_image_tag post.photo.key, height: 225, width: 100, crop: :pad, class: "card-img-top"%>
+  <%= post.title %>
+  <%= post.text %>
+  <%= post.created_at %>
+  <%= post.photo.key %>
+<% end %>

@@ -11,7 +11,7 @@ User.destroy_all
 puts "Database clean"
 
 puts "creating users"
-kubi = User.create(username: "kubi_g", email: "kubigdogan@gmail.com", password: "password", typeofuser: false)
+kubi = User.create(username: "kubi_g", email: "kubigdogan@gmail.com", password: "password", typeofuser: false, name: "kubi")
 carolin = User.create(username: "carolins", email: "carolins@gmail.com", password: "password", typeofuser: false)
 david = User.create(username: "davidm", email: "davidm@gmail.com", password: "password", typeofuser: false)
 emma = User.create(username: "emmac", email: "emmac@gmail.com", password: "password", typeofuser: false)

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :events do
     # resources :bookings, only: [:new, :create]
   end
-
+  resources :posts, only: [:index, :new, :create, :destroy]
 
   resources :users, only: [:index, :show], path: :chefs, as: :chefs, controller: :chefs do
     member do
