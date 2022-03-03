@@ -17,7 +17,7 @@
         <p class="lead text-muted">Description of events or upcoming.</p>
         <p>
           <%= link_to "Create New Event", new_event_path, class: "btn btn-primary my-2"%>
-          <%= link_to "Back To Feed", new_event_path, class: "btn btn-secondary my-2"%>
+          <%= link_to "Back To Feed", posts_path, class: "btn btn-secondary my-2"%>
         </p>
       </div>
     </div>
@@ -53,27 +53,3 @@
       </div>
     </div>
   </div>
-
-</main>
-<nav class="nav">
-  <div class="nav__link nav__link--active">
-    <%= link_to myprofile_path do %>
-      <i class="fas fa-search icon fa-2x"></i>
-    <% end %>
-  </div>
-  <div class="nav__link nav__link--active">
-    <%= link_to myprofile_path do %>
-     <i class="far fa-newspaper icon fa-2x"></i>
-    <% end %>
-  </div>
-   <div class="nav__link nav__link--active">
-    <%= link_to myprofile_path do %>
-     <i class="far fa-comments icon fa-2x"></i>
-    <% end %>
-  </div>
-   <div class="nav__link nav__link--active">
-    <%= link_to myprofile_path do %>
-      <i class="fas fa-user-alt icon fa-2x"></i>
-    <% end %>
-  </div>
-</nav>

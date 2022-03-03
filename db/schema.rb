@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_03_03_120235) do
 
   # These are extensions that must be enabled in order to support this database
@@ -77,6 +78,15 @@ ActiveRecord::Schema.define(version: 2022_03_03_120235) do
     t.index ["following_id"], name: "index_follows_on_following_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
@@ -136,6 +146,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_120235) do
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "posts", "users"
   add_foreign_key "restaurants", "users"
   add_foreign_key "resumes", "users"
 end
