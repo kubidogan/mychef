@@ -14,6 +14,11 @@ body {
   z-index: 1;
 }
 
+.nav-pills {
+  display: flex;
+  justify-content: center;
+}
+
 .nav__link {
   display: flex;
   flex-direction: column;
