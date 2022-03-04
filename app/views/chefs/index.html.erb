@@ -15,21 +15,23 @@
   <div class="container-index">
     <div class="index-column flex-nowrap">
         <% @users.each do |user| %>
-        <div class="container-index-card">
-          <div class="index-card-icons d-flex">
-            <i class="fa fa-regular fa-heart"></i>
-            <i class="fa fa-light fa-eye"></i>
-            <i class="fa fa-regular fa-star"></i>
-          </div>
-          <%= link_to chef_path(user) do %>
-            <%= image_tag "scroll_card_kubi.jpg", class: "index-card" %>
-            <div class="index-text">
-            <h2 class="index-card-text-name" id="index-text"> <%= user.name %> </h2>
-            <h3 class="index-card-text-restaurant" id="index-text"> <%= user.cuisine %> <h3>
+          <div class="container-index-card">
+            <div class="index-card-icons d-flex">
+              <i class="fa fa-regular fa-heart"></i>
+              <i class="fa fa-light fa-eye"></i>
+              <i class="fa fa-regular fa-star"></i>
             </div>
-            <% end %>
-        </div>
-            <% end %>
+            <%= link_to chef_path(user) do %>
+              <% if user.avatar.attached? %>
+                <%= cl_image_tag user.avatar.key, height: 225, width: 100, class: "card-img-top"%>
+              <% end %>
+              <div class="index-text">
+              <h2 class="index-card-text-name" id="index-text"> <%= user.name %> </h2>
+              <h3 class="index-card-text-restaurant" id="index-text">Cuisine: <%= user.cuisine %> <h3>
+              </div>
+              <% end %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
