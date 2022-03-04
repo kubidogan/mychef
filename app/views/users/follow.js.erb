@@ -1,6 +1,7 @@
 function renderUser(userHTML) {
+  console.log("function running");
   const user = document.querySelector("[data-user='<%= @user.id %>']");
   user.outerHTML = userHTML;
 }
-
+console.log("js hit");
 renderUser('<%= j render @user %>');
