@@ -16,17 +16,17 @@
     <div class="index-column flex-nowrap">
         <% @users.each do |user| %>
         <div class="container-index-card">
+          <div class="index-card-icons d-flex">
+            <i class="fa fa-regular fa-heart"></i>
+            <i class="fa fa-light fa-eye"></i>
+            <i class="fa fa-regular fa-star"></i>
+          </div>
           <%= link_to chef_path(user) do %>
             <%= image_tag "scroll_card_kubi.jpg", class: "index-card" %>
             <div class="index-text">
             <h2 class="index-card-text-name" id="index-text"> <%= user.name %> </h2>
             <h3 class="index-card-text-restaurant" id="index-text"> <%= user.cuisine %> <h3>
             </div>
-            <p class="index-card-text-bio" id="index-text-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-in pretium orci ves.<p>
-<%# 250 character limit for bio %>
             <% end %>
         </div>
             <% end %>

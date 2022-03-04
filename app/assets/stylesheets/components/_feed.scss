@@ -6,30 +6,45 @@
 
 .card-img-top {
   object-fit: 100;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 100px;
+  border-radius: 10px;
+  border: 2px solid #123F37;
+  // border-top-right-radius: 10px;
+  // border-top-left-radius: 30px;
+  // border-bottom-right-radius: 50px;
+  // border-bottom-left-radius: 100px;
+}
+
+.card-body {
+  color: #000;
 }
 
 #feed-title {
-  margin-top: 40px;
+  // margin-top: 40px;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   color: #123F37;
+  background: #FAC83A;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 25px;
+  position: relative;
+  width: 80%;
 }
-
+// #123F37
+// #AFE9DE
 .card-feed {
   padding: 20px;
   margin-top: 25px;
   // border-style: outset;
   // border-color: #FAC83A;
   // border-width: 7px;
-  border: 4px outset #FAC83A;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 100px;
+  border: 3px outset #123F37;
+  border-radius: 10px;
+  background: #AFE9DE;
+  // border-top-right-radius: 10px;
+  // border-top-left-radius: 30px;
+  // border-bottom-right-radius: 50px;
+  // border-bottom-left-radius: 100px;
 }
 
 .postbtn {

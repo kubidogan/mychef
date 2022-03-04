@@ -8,6 +8,7 @@
 require "uri"
 puts "cleaning db"
 User.destroy_all
+Event.destroy_all
 puts "Database clean"
 
 puts "creating users"

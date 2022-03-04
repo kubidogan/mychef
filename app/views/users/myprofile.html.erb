@@ -1,37 +1,94 @@
-<h1>Profile</h1>
-<%= link_to "Create Event", new_event_path %>
-<%= link_to "Add Experience", myprofile_experiences_new_path %>
 
-<% current_user.resumes.each do |section| %>
-<ul>
-<li><%= section.experience %> | <%= section.start_date %> - <%= section.end_date %></li>
-</ul>
-<% end %>
-
-<main>
+<div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Menu
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <button class="dropdown-item" type="button">Profile settings</button>
+    <button class="dropdown-item" type="button">Create event</button>
+    <button class="dropdown-item" type="button">Edit bio</button>
+  </div>
+</div>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Events Below</h1>
-        <p class="lead text-muted">Description of events or upcoming.</p>
-        <p>
-          <%= link_to "Create New Event", new_event_path, class: "btn btn-primary my-2"%>
-          <%= link_to "Back To Feed", posts_path, class: "btn btn-secondary my-2"%>
+        <div class="chef-overview">
+        <h1>Hello <%= current_user.name %></h1>
+        </div>
+          <% if current_user.typeofuser%>
+          <%= link_to "View Profile", chef_path(current_user), class: "btn btn-secondary my-2"%>
+          <% end %>
+      </div>
+    </section>
+
+    <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Your Bio</h1>
+        <p class="lead text-muted">Your bio is a short intro to your customers on what makes you special
         </p>
+        <p>
+        <div class="edit-bio"><p><%= link_to "Edit", new_event_path, class: "btn btn-primary my-2"%></p></div>
+        <div class="card shadow-sm">
+          <p class="lead text-muted" style="padding: 10px; text-align: center; color: black;"><%= current_user.bio %></p>
+          <div class="d-flex justify-content-between align-items-center">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Your Experience</h1>
+        <p class="lead text-muted">Show your experience to attract potential investors and/or future employers</p>
+        <p>
+          <%= link_to "Add", new_event_path, class: "btn btn-primary my-2"%>
+          <%= link_to "Edit", new_event_path, class: "btn btn-secondary my-2"%>
+        </p>
+        <div class="album py-5 bg-light">
+          <div class="container myprofile">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col">
+                <% current_user.resumes.each do |section| %>
+                  <div class="card shadow-sm">
+                    <ul>
+                      <li class="lead text-muted" style="padding: 10px; text-align: center; color: black;"><%= section.experience %> | <%= section.start_date %> - <%= section.end_date %></li>
+                    </ul>
+                    <div class="d-flex justify-content-between align-items-center">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Your Events</h1>
+        <p class="lead text-muted">Create special events for your customers to showcase your skills and increase your customer base</p>
+        <p>
+          <%= link_to "Create", new_event_path, class: "btn btn-primary my-2"%>
+          <%= link_to "Edit", new_event_path, class: "btn btn-secondary my-2"%>
+        </p>
+      </div>
+    </div>
   <div class="album py-5 bg-light">
     <div class="container myprofile">
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <% current_user.events.each do |event| %>
             <div class="card shadow-sm">
             <% if event.photo.attached? %>
-              <%= cl_image_tag event.photo.key, height: 225, width: 100, crop: :pad, class: "card-img-top"%>
+              <%= cl_image_tag event.photo.key, height: 225, width: 100, class: "card-img-top"%>
             <% end %>
               <div class="card-body">
                 <h3 class="card-name"><% event.name %></h3>
@@ -43,8 +100,9 @@
                 <p class="card-text"> <%= event.event_time %></p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button type="button" class="btn btn-secondary">View</button>
+                    <button type="button" class="btn btn-secondary">Edit</button>
+                    <%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -55,3 +113,4 @@
       </div>
     </div>
   </div>
+  </section>
