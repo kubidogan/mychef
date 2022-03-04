@@ -12,8 +12,9 @@
               </div>
             </div>
             <div class="follow-btn">
-            <%= link_to "Follow", follow_chef_path(@user), method: :post, class: "btn btn-secondary my-2"%>
-            </div>
+              <%= render @user %>
+            <%# <%= link_to "Follow", follow_chef_path(@user), method: :post, class: "btn btn-secondary my-2"%>
+            <%# </div> %>
             <%# <%= link_to "Unfollow" %>
           </div>
         </div>

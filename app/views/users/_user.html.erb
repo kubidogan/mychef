@@ -1,8 +1,9 @@
-<li data-user=<%= user.id %>>
-  <%= user.email %>
+<span data-user=<%= user.id %>>
+  <%# <%= user.email %>
   <% if current_user.is_following?(user.id) %>
-    <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
+    <%= link_to "Following", unfollow_chef_path(user.id), method: :post, remote: true, class: "btn btn-secondary my-2" %>
   <% else %>
-    <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
+    <%= link_to "Follow", follow_chef_path(user.id), method: :post, remote: true, class: "btn btn-secondary my-2" %>
   <% end %>
-</li>
+<%# </li> %>
+</span>
