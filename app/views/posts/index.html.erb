@@ -2,13 +2,12 @@
   <div>
     <h1 id="feed-title">News Feed</h1>
   </div>
-
       <% @posts.all.each do |post| %>
-        <div class="card card-feed" style="width: 18rem;">
+        <div class="card-product style=">
           <% if post.photo.attached? %>
-              <%= cl_image_tag post.photo.key, height: 225, width: 100, class: "card-img-top"%>
+              <%= cl_image_tag post.photo.key,class: "card-img-top"%>
           <% end %>
-          <div class="card-body">
+          <div class="card-product-info">
             <h5><%= post.user.name %> </h5>
             <p class="card-title"><%= post.title %></p>
             <p class="card-text"><%= post.text %></p>
