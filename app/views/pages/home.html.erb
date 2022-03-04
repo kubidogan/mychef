@@ -1,6 +1,6 @@
 <div class="container-homepage">
   <div class="container-homepage-title">
-    <h1 class="landing-title">MyChef</h1>
+    <img class="homepage-logo" src="https://res.cloudinary.com/da35bgawq/image/upload/v1646400104/logo_yellow_har_preview_rev_1_kirnvs.png" alt="logo">
     <%= link_to "Explore", chefs_path, class: "btn-explore" %>
   </div>
   <div class="container-trending">
@@ -10,6 +10,11 @@
         <% @users.each do |user| %>
         <div class="container-scroll-card">
           <%= link_to chef_path(user) do %>
+          <div class="card-icons d-flex">
+            <i class="fa fa-regular fa-heart"></i>
+            <i class="fa fa-light fa-eye"></i>
+            <i class="fa fa-regular fa-star"></i>
+          </div>
             <%= image_tag "scroll_card_kubi.jpg", class: "scroll-card" %>
             <h2 class="scroll-card-text-name" id="scroll-text"> <%= user.name %> </h2>
             <h3 class="scroll-card-text-restaurant" id="scroll-text"> <%= user.cuisine %> <h3>

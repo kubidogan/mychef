@@ -3,28 +3,23 @@
   padding-bottom: 5px;
 }
 
-.landing-title {
-  color: white;
-  font-size: 55px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bolder;
-  margin-bottom: 20px;
-  padding-top: 10px;
+.homepage-logo {
+  width: 90%;
+  position: absolute;
+  top: -10px;
+  filter: brightness(90%);
 }
 
-/* 92-928999_chefs-uniform-hat-clip-art-chef-hat-logo 1 */
-// .chef-hat {
-// position: absolute;
-// left: 79.48%;
-// right: 7.96%;
-// top: 1.64%;
-// bottom: 92.79%;
+.card-icons {
+  color: #ffffff;
+  position: absolute;
+  top: 215px;
+  left: 170px;
+}
 
-// background: url(chef.png);
-// transform: matrix(-1, 0, 0, 1, 0, 0);
-// }
-
+.fa {
+  margin-right: 5px;
+}
 
 .container-homepage-title {
   border-radius: 10px;
@@ -41,7 +36,6 @@
   align-items: center;
   position: relative;
 }
-
 
 .btn-explore {
   color: #ffffff;
@@ -154,6 +148,7 @@
   padding: 0px;
   margin-left: 20px;
   padding-bottom: 30px;
+  position: relative;
 }
 
 .scroll-card {
