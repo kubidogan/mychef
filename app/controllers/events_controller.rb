@@ -13,6 +13,14 @@ class EventsController < ApplicationController
     end
   end
 
+  # def status(event)
+  #   if event.event_time < Date.today
+  #     false
+  #   else
+  #     true
+  #   end
+  # end
+
   private
 
   def event_params
