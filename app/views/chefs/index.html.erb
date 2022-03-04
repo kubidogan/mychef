@@ -1,24 +1,51 @@
-<h1>CHEFS</h1>
+<div class="container-index">
+  <div class="container-index-title">
+    <h1 class="index-title">Chefs</h1>
+    <div class="index-search-form"><%= form_tag chefs_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "index-form-control",
+        placeholder: "Find a Chef"
+      %>
+      <%= submit_tag "Search", class: "btn-index btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 
-<%= form_tag chefs_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a Chef by name"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+  <div class="container-index">
+    <div class="index-column flex-nowrap">
+        <% @users.each do |user| %>
+        <div class="container-index-card">
+          <%= link_to chef_path(user) do %>
+            <%= image_tag "scroll_card_kubi.jpg", class: "index-card" %>
+            <div class="index-text">
+            <h2 class="index-card-text-name" id="index-text"> <%= user.name %> </h2>
+            <h3 class="index-card-text-restaurant" id="index-text"> <%= user.cuisine %> <h3>
+            </div>
+            <p class="index-card-text-bio" id="index-text-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
+pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
+Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
+in pretium orci ves.<p>
+<%# 250 character limit for bio %>
+            <% end %>
+        </div>
+            <% end %>
+    </div>
+  </div>
+</div>
 
-<% @users.each do |chef| %>
-<% if chef.typeofuser?  %>
-<ul>
-<li><%= chef.name %>
-<%= chef.cuisine %>
-<%= chef.price %>
-<%= link_to "VIEW", chef_path(chef) %>
-</li>
-</ul>
-<% else %>
-<p>no chef</p>
-<% end %>
-<% end %>
+
+
+ <%# <% @users.each do |chef| %>
+      <%# <% if chef.typeofuser?  %>
+      <%# <ul>
+      <li><%= chef.name %>
+      <%# <%= chef.cuisine %>
+      <%# <%= chef.price %>
+      <%# <%= link_to "VIEW", chef_path(chef) %>
+      <%# </li>
+      </ul>
+      <% else %>
+      <%# <p>no chef</p>
+      <% end %>
+      <%# <% end %>
