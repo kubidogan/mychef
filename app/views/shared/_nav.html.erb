@@ -1,6 +1,6 @@
 <nav class="bottom-nav">
   <div class="nav__link nav__link--active">
-    <%= link_to do %>
+    <%= link_to chefs_path do %>
       <i class="fas fa-search icon fa-2x"></i>
     <% end %>
   </div>
@@ -10,13 +10,26 @@
     <% end %>
   </div>
    <div class="nav__link nav__link--active">
-    <%= link_to do %>
+    <%= link_to myprofile_path do %>
      <i class="far fa-comments icon fa-2x"></i>
     <% end %>
   </div>
-   <div class="nav__link nav__link--active">
-    <%= link_to do %>
+  <div class="nav__link nav__link--active">
+    <%= link_to myprofile_path do %>
       <i class="fas fa-user-alt icon fa-2x"></i>
     <% end %>
   </div>
+
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+         <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <% end %>
+      </div>
+    </div>
+   </div>
 </nav>

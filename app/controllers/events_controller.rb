@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to myprofile_path
   end
-
+  
   private
 
   def event_params
