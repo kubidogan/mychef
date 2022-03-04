@@ -10,14 +10,16 @@
         <% @users.each do |user| %>
         <div class="container-scroll-card">
           <%= link_to chef_path(user) do %>
-          <div class="card-icons d-flex">
-            <i class="fa fa-regular fa-heart"></i>
-            <i class="fa fa-light fa-eye"></i>
-            <i class="fa fa-regular fa-star"></i>
-          </div>
-            <%= image_tag "scroll_card_kubi.jpg", class: "scroll-card" %>
-            <h2 class="scroll-card-text-name" id="scroll-text"> <%= user.name %> </h2>
-            <h3 class="scroll-card-text-restaurant" id="scroll-text"> <%= user.cuisine %> <h3>
+            <div class="card-icons d-flex">
+              <i class="fa fa-regular fa-heart"></i>
+              <i class="fa fa-light fa-eye"></i>
+              <i class="fa fa-regular fa-star"></i>
+            </div>
+            <% if user.avatar.attached? %>
+              <%= cl_image_tag user.avatar.key, height: 225, width: 100, class: "card-img-top"%>
+            <% end %>
+              <h2 class="scroll-card-text-name" id="scroll-text"> <%= user.name %> </h2>
+              <h3 class="scroll-card-text-restaurant" id="scroll-text"> <%= user.cuisine %> <h3>
           <% end %>
         </div>
         <% end %>
