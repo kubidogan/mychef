@@ -1,0 +1,29 @@
+<% @events.each do |event| %>
+  <% if %>
+    <% !event.status %>
+      <div class="card shadow-sm">
+        <% if event.photo.attached? %>
+          <%= cl_image_tag event.photo.key, height: 225, width: 100,class: "card-img-top"%>
+        <% end %>
+        <div class="card-body">
+        <div class="event-item">
+          <div class="ei-name">
+            <%= event.name %>
+          </div>
+          <div class="ei-date">
+            <p class="cal-item" style="margin-right: 5px;"> 📅 </p><%= event.event_time.to_date %>
+          </div>
+          <div class="ei-price">
+            <p class="price-item" style="margin-right: 3px;">￡</p><%= event.price %>
+          </div>
+          <div class="ei-cuisine">
+            <%= event.cuisine %>
+          </div>
+          <div class="ei-cat">
+            <%= event.category %>
+          </div>
+        </div>
+        </div>
+      </div>
+  <% end %>
+<% end %>

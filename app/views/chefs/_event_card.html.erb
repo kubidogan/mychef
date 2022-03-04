@@ -1,0 +1,39 @@
+<% @user.events.each do |event| %>
+  <% if %>
+    <% !event.status %>
+      <div class="card shadow-sm">
+        <% if event.photo.attached? %>
+          <%= cl_image_tag event.photo.key, height: 225, width: 100,class: "card-img-top"%>
+        <% end %>
+        <div class="card-body">
+        <div class="event-item">
+          <div class="ei-name">
+            <%= event.name %>
+          </div>
+          <div class="ei-date">
+            <p class="cal-item" style="margin-right: 5px;"> 📅 </p><%= event.event_time.to_date %>
+          </div>
+          <div class="ei-price">
+            <p class="price-item" style="margin-right: 3px;">￡</p><%= event.price %>
+          </div>
+          <div class="ei-cuisine">
+            <%= event.cuisine %>
+          </div>
+          <div class="ei-cat">
+            <%= event.category %>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <% if event.capacity > event.bookings.count %>
+            <%= simple_form_for [event, @booking] do |f| %>
+            <%= f.button :submit, "Attend event", class: "btn btn-primary my-2" %>
+            <%= link_to "Map", event_path, class: "btn btn-secondary" %>
+            <% end %>
+            <% else %>
+            <p>The event is fully booked</p>
+            <% end %>
+          </div>
+        </div>
+        </div>
+      </div>
+  <% end %>
+<% end %>

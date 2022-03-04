@@ -16,17 +16,22 @@ class EventsController < ApplicationController
   def show
     # @users = User.find(params[:id])
     @events = Event.all
-    @users = User.all
-    @markers = @users.geocoded.map.each do |user|
+    @markers = @events.geocoded.map.each do |event|
       {
-        lat: user.latitude,
-        lng: user.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: event }),
         image_url: helpers.asset_url("mapboxmarker.png")
       }
     end
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to myprofile_path
+  end
+  
   private
 
   def event_params
