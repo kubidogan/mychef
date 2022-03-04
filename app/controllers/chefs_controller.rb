@@ -1,5 +1,6 @@
 class ChefsController < ApplicationController
   #Refer to User model NOT chefs
+  before_action :set_user, only: [:follow, :unfollow]
 
   def index
     # @users = User.where(type: 'Chef').reverse
@@ -28,11 +29,23 @@ class ChefsController < ApplicationController
     end
   end
 
-
   def show
     @user = User.find(params[:id])
     @booking = Booking.new
     # @events = Event.all
     # @reviews = Review.all
+    def status(event)
+      if event.event_time < Date.today
+        false
+      else
+        true
+      end
+    end
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
