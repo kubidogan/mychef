@@ -8,22 +8,71 @@
   width: 152px;
   position: absolute;
   left: 10px;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .banner {
-  background: #4ffebf;
+  background: url(farmers.png) ;
+  object-fit:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
   width: 390px;
-  height: 100px;
+  height: 130px;
+
 }
 
 .follow-info-group {
   position: absolute;
-  right: 60px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 100px;
+  right: 10px;
+}
+
+.follow-btn {
+  position: absolute;
+  right: 10px;
+}
+
+.ei-date {
+  margin-left:10px;
+  color:#363b41;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.ei-name{
+  font-size: 18px;
+  font-weight: bolder;;
+  margin-left:10px;
+  color:#363b41;
+}
+
+.ei-price{
+  margin-left:10px;
+  color:#363b41;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.ei-cat {
+  margin-left:10px;
+  color:#363b41;
+}
+
+.ei-cuisine{
+  margin-left:10px;
+  border-radius: 20px;
+  border-color: #4ffebf;
+  border-style: solid;
+  border-width: 2px;
+  padding-left: 1px;
+  padding-right: 1px;
+  text-align: center;
+  width: 20%;
+  color: #4ffebf;
 }

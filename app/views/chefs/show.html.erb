@@ -7,21 +7,23 @@
             <div class="container">
               <%= image_tag "scroll_card_kubi.jpg", class:"avatar-xlarge rounded-circle" %>
               <div class="follow-info-group">
-                <p><strong>235</strong></p><%= link_to "Following", '#', class: "following-item"%>
-                <p><strong>123</strong></p><%= link_to "Followers", '#', class: "followers-item"%>
+                <p class="follow-info-item"><strong>235</strong></p><%= link_to "Following", '#', class: "following-item"%>
+                <p class="follow-info-item"><strong>123</strong></p><%= link_to "Followers", '#', class: "followers-item"%>
               </div>
             </div>
+            <div class="follow-btn">
+            <%= link_to "Follow", follow_chef_path(@user), method: :post, class: "btn btn-secondary my-2"%>
+            </div>
+            <%# <%= link_to "Unfollow" %>
           </div>
         </div>
           <h2 class="fw-light text-start" style="margin: 15px;"><%= @user.name %></h2>
           <p class="lead text-muted text-start" style="margin: 15px; font-size: 18px;"><%= @user.bio %></p>
-          <%= link_to "Follow", follow_chef_path(@user), method: :post, class: "btn btn-secondary my-2"%>
-          <%= link_to "Unfollow" %>
           <%= link_to "Leave a review", new_review_path(@user), class: "btn btn-secondary my-2"%>
       </div>
     </section>
     <section>
-    <div class="album py-5 bg-light">
+    <div class="album py-3 bg-light">
       <div class="container">
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
@@ -36,76 +38,93 @@
         </ul>
         <div class="tab-content" id="pills-tabContent" >
           <div class="tab-pane fade show active" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               <div class="col">
                 <h2 class="event-banner"><u class="underline-highlight">Upcoming Events</u></h2>
-                        <% @user.events.each do |event| %>
-                          <% if %>
-                            <% !event.status? %>
-                              <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
-                                  <div class="card-body">
-                                    <%= event.name %>
-                                    <%= event.event_time %>
-                                    <%= event.price %>
-                                    <%= event.cuisine %>
-                                    <%= event.category %>
-                                      <div class="d-flex justify-content-between align-items-center">
-                                      <% if event.capacity > event.bookings.count %>
-                                      <%= simple_form_for [event, @booking] do |f| %>
-                                      <%= f.button :submit, "Attend event", class: "btn btn-primary my-2" %>
-                                      <% end %>
-                                      <% else %>
-                                      <p>The event is fully booked</p>
-                                      <% end %>
-                                    </div>
-                                  </div>
-                              </div>
-                          <% end %>
-                        <% end %>
-              </div>
-
-            <h2>Past Events</h2>
-              <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
-                  <div class="card-body">
-                    <P>SOME TEXT</P>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
+                <% @user.events.each do |event| %>
+                  <% if %>
+                    <% !event.status %>
+                      <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
+                        <div class="card-body">
+                        <div class="event-item">
+                          <div class="ei-name">
+                            <%= event.name %>
+                          </div>
+                          <div class="ei-date">
+                            <p class="cal-item" style="margin-right: 5px;"> 📅 </p><%= event.event_time.to_date %>
+                          </div>
+                          <div class="ei-price">
+                            <p class="price-item" style="margin-right: 3px;">￡</p><%= event.price %>
+                          </div>
+                          <div class="ei-cuisine">
+                            <%= event.cuisine %>
+                          </div>
+                          <div class="ei-cat">
+                            <%= event.category %>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <% if event.capacity > event.bookings.count %>
+                            <%= simple_form_for [event, @booking] do |f| %>
+                            <%= f.button :submit, "Attend event", class: "btn btn-primary my-2" %>
+                            <% end %>
+                            <% else %>
+                            <p>The event is fully booked</p>
+                            <% end %>
+                          </div>
+                        </div>
                         </div>
                       </div>
-                  </div>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="col">
+                <h2 class="event-banner"><u class="underline-highlight">Past Events</u></h2>
+                <% @user.events.each do |event| %>
+                  <% if %>
+                    <% event.status %>
+                      <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="120"></svg>
+                        <div class="card-body">
+                          <%= event.name %>
+                          <%= event.event_time %>
+                          <%= event.price %>
+                          <%= event.cuisine %>
+                          <%= event.category %>
+                        </div>
+                      </div>
+                  <% end %>
+                <% end %>
               </div>
             </div>
           </div>
+
           <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
-          <div class="card shadow-sm">
-            <div class="card-body">
-            <h2 class="event-banner">Reviews still coming</h2>
-            <% @user.reviewee_relationships.each do |review| %>
-              <ul>
-              <li><%= review.comment %></li>
-              <li><%= review.rating %></li>
-              </ul>
-            <% end %>
-              <div class="d-flex justify-content-between align-items-center">
+            <h2 class="event-banner"><u class="underline-highlight">Reviews</u></h2>
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <% @user.reviewee_relationships.each do |review| %>
+                  <p> <%= @user[review] %> </p>
+                  <ul>
+                  <li><%= review.comment %></li>
+                  <li><%= "★" * review.rating %></li>
+                  </ul>
+                <% end %>
               </div>
             </div>
           </div>
-          </div>
+
           <div class="tab-pane fade" id="pills-experience" role="tabpanel" aria-labelledby="pills-experience-tab">
-          <h2 class="event-banner"><u class="underline-highlight"> Experience</u> </h2>
-          <div class="card shadow-sm">
-            <div class="card-body">
-            <% @user.resumes.each do |section| %>
-            <ul>
-            <li><%= section.experience %> | <%= section.start_date %> - <%= section.end_date %></li>
-            </ul>
-            <% end %>
-              <div class="d-flex justify-content-between align-items-center">
+            <h2 class="event-banner"><u class="underline-highlight"> Experience</u> </h2>
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <% @user.resumes.each do |section| %>
+                <ul>
+                <li><%= section.experience %> | <%= section.start_date.to_date %> - <%= section.end_date.to_date %></li>
+                </ul>
+                <% end %>
               </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

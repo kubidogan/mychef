@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .landing-title {
-  color: #123F37;
+  color: white;
   font-size: 55px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -9,17 +9,35 @@
   padding-top: 10px;
 }
 
+/* 92-928999_chefs-uniform-hat-clip-art-chef-hat-logo 1 */
+// .chef-hat {
+// position: absolute;
+// left: 79.48%;
+// right: 7.96%;
+// top: 1.64%;
+// bottom: 92.79%;
+
+// background: url(chef.png);
+// transform: matrix(-1, 0, 0, 1, 0, 0);
+// }
+
+
 .container-homepage-title {
   border-radius: 10px;
   padding: 15px;
-  height: 200px;
+  // width: 365px;
+  height: 224px;
   margin: 25px;
-  background-color: #FAC83A;
+  background: url(frame.png);
+  // background: url(logo.png);
+  object-fit:     cover;
+  // background-color: #FAC83A;
   // background-image: url("landing-title-card.jpg");
   background-size: 100% 120%;
   align-items: center;
   position: relative;
 }
+
 
 .btn-explore {
   color: #ffffff;

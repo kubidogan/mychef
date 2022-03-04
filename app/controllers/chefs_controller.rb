@@ -34,6 +34,13 @@ class ChefsController < ApplicationController
     @booking = Booking.new
     # @events = Event.all
     # @reviews = Review.all
+    def status(event)
+      if event.event_time < Date.today
+        false
+      else
+        true
+      end
+    end
   end
 
 private
