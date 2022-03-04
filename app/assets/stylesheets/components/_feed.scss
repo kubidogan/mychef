@@ -1,9 +1,38 @@
-// .container {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .card-img-top {
   object-fit: 100;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 100px;
+}
+
+#feed-title {
+  margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #123F37;
+}
+
+.card-feed {
+  padding: 20px;
+  margin-top: 25px;
+  // border-style: outset;
+  // border-color: #FAC83A;
+  // border-width: 7px;
+  border: 4px outset #FAC83A;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 100px;
+}
+
+.postbtn {
+  width: 100%;
+  margin-top: 10px;
 }

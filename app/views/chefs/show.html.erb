@@ -3,19 +3,20 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="chef-overview">
-        <div class="avatar rounded-circle"><img src='#'/></div>
-        <div class="follow-info-btn">
-          <p>❤️</p>
-          <%= link_to "Following", '#', class: "btn btn-primary my-2"%>
+          <div class="banner" style="margin-bottom: 50px;">
+            <div class="container">
+              <%= image_tag "scroll_card_kubi.jpg", class:"avatar-xlarge rounded-circle" %>
+              <div class="follow-info-group">
+                <p><strong>235</strong></p><%= link_to "Following", '#', class: "following-item"%>
+                <p><strong>123</strong></p><%= link_to "Followers", '#', class: "followers-item"%>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="follow-info-btn">
-          <p>❤️</p>
-          <%= link_to "Followers", '#', class: "btn btn-primary my-2"%>
-        </div>
-        <h2 class="fw-light text-start"><%= @user.name %></h2>
-        </div>
-        <p class="lead text-muted"><%= @user.bio %></p>
-          <%= link_to "Follow Chef", follow_chef_path(@user), class: "btn btn-secondary my-2"%>
+          <h2 class="fw-light text-start" style="margin: 15px;"><%= @user.name %></h2>
+          <p class="lead text-muted text-start" style="margin: 15px; font-size: 18px;"><%= @user.bio %></p>
+          <%= link_to "Follow", follow_chef_path(@user), method: :post, class: "btn btn-secondary my-2"%>
+          <%= link_to "Unfollow" %>
           <%= link_to "Leave a review", new_review_path(@user), class: "btn btn-secondary my-2"%>
       </div>
     </section>
