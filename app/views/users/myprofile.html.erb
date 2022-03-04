@@ -4,9 +4,15 @@
     Menu
   </button>
   <div class="dropdown-menu dropdown-menu-right">
+    <%= link_to "Profile settings", edit_user_registration_path, class: "nav-link dropdown-item" %>
+    <%= link_to "Create event", new_event_path, class: "nav-link dropdown-item" %>
+    <%= link_to "Edit bio", myprofile_experiences_new_path, class: "nav-link dropdown-item" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link dropdown-item" %>
+
+<%#
     <button class="dropdown-item" type="button">Profile settings</button>
     <button class="dropdown-item" type="button">Create event</button>
-    <button class="dropdown-item" type="button">Edit bio</button>
+    <button class="dropdown-item" type="button">Edit bio</button> %>
   </div>
 </div>
 
@@ -29,7 +35,7 @@
         <p class="lead text-muted">Your bio is a short intro to your customers on what makes you special
         </p>
         <p>
-        <div class="edit-bio"><p><%= link_to "Edit", new_event_path, class: "btn btn-primary my-2"%></p></div>
+        <div class="edit-bio"><p><%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary my-2"%></p></div>
         <div class="card shadow-sm">
           <p class="lead text-muted" style="padding: 10px; text-align: center; color: black;"><%= current_user.bio %></p>
           <div class="d-flex justify-content-between align-items-center">
@@ -45,8 +51,8 @@
         <h1 class="fw-light">Your Experience</h1>
         <p class="lead text-muted">Show your experience to attract potential investors and/or future employers</p>
         <p>
-          <%= link_to "Add", new_event_path, class: "btn btn-primary my-2"%>
-          <%= link_to "Edit", new_event_path, class: "btn btn-secondary my-2"%>
+          <%= link_to "Add", myprofile_experiences_new_path, class: "btn btn-primary my-2"%>
+          <%= link_to "Edit", myprofile_experiences_new_path, class: "btn btn-secondary my-2"%>
         </p>
         <div class="album py-5 bg-light">
           <div class="container myprofile">
