@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.container-homepage {
+  padding-bottom: 5px;
+}
+
 .landing-title {
   color: #123F37;
   font-size: 55px;
@@ -39,6 +43,7 @@
   padding: 15px;
   margin: 25px;
   position: relative;
+  padding-bottom: 45px;
 }
 
 .trending-title {
@@ -130,7 +135,7 @@
   width: 70%;
   padding: 0px;
   margin-left: 20px;
-  padding-bottom: 35px;
+  padding-bottom: 30px;
 }
 
 .scroll-card {
