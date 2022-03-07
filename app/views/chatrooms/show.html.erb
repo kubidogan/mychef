@@ -2,7 +2,12 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
-  <h1>#<%= @chatroom.name %></h1>
+    <h1>#<%= @chatroom.name %></h1>
+  <div class="backbtn">
+    <%= link_to chatrooms_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
 
 
   <div class="messages" data-chatroom-subscription-target="messages">
