@@ -1,3 +1,7 @@
-<% @chatrooms.each do |chat| %>
-  <%= chat.name %>
-<% end %>
+<div class="container chatpage">
+  <% @chatrooms.each do |chat| %>
+    <ul class="fa-ul">
+      <li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span><%= link_to chat.name, chatroom_path(chat) %></li>
+    </ul>
+  <% end %>
+</div>
