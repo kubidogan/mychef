@@ -12,15 +12,9 @@
     <%= f.input :capacity %>
     <%= f.input :category,
       as: :check_boxes,
-      collection: ["Supper Club", "Dine-In", "Festival", "Picnic"],
+      collection: ["Supper Club", "Dine-In", "Festival", "Picnic", "Private Hire", "Brunch"],
       input_html: { class: "tag-selector" },
       item_wrapper_class: 'tag-item' %>
-
-    <%= f.input :category,
-      prompt: "Select Category",
-      as: :select,
-      collection: ["Supper Club", "Dine-In", "Festival", "Picnic"],
-      input_html: {class: "dropdown"}%>
     <%= f.input :photo, as: :file %>
     <%= link_to "Back", myprofile_path, class: "btn btn-secondary" %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
