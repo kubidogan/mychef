@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all.order(created_at: :desc)
+    @posts = @posts.select do |post|
+      current_user.following.include?(post.user) || post.user == current_user
+    end
   end
 
   def new
