@@ -19,6 +19,7 @@
       placeholder: "Message ##{@chatroom.name}",
       wrapper_html: {class: "flex-grow-1"}
     %>
+    <%= hidden_field_tag :authenticity_token %>
     <%= f.submit "Send", class: "btn btn-primary" %>
   <% end %>
 

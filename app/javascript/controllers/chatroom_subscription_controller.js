@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import consumer from "../channels/consumer"
-import { csrfToken } from "@rails/ujs"
+
 
 export default class extends Controller {
   static values = { chatroomId: Number }
