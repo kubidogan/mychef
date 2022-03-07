@@ -21,7 +21,7 @@ carolin.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 david = User.create(username: "davidm", email: "davidm@gmail.com", password: "password", typeofuser: false)
 file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646408063/david_bjvlgj.jpg')
 david.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-emma = User.create(username: "emmac", email: "emmac@gmail.com", password: "password", typeofuser: false)
+emma = User.create(username: "emmac", name: "Emma Cheng", email: "emmac@gmail.com", password: "password", typeofuser: false)
 file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646408064/emma_g4imoi.jpg')
 emma.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 

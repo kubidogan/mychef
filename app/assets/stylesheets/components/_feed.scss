@@ -2,7 +2,22 @@ body{margin-top:20px;
   background:#eee;
   }
   /* Social feed */
-
+  .username-style {
+    text-decoration: underline;
+    font-weight: 550;
+  }
+  .postbtn {
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 55px;
+    padding: 20px;
+    z-index: 1;
+  }
+  .btn-group-feed {
+    display: inline-block;
+    color: gray;
+  }
   .feed-header {
     text-align: center;
     padding: 20px;
@@ -14,9 +29,9 @@ body{margin-top:20px;
 
   .social-feed-box {
     /*padding: 15px;*/
-    border: 1px solid #e7eaec;
     background: #fff;
     margin-bottom: 15px;
+    box-shadow: #123F37;
   }
   .article .social-feed-box {
     margin-bottom: 0;
@@ -86,56 +101,4 @@ body{margin-top:20px;
       transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
       width: 100%;
       font-size: 14px;
-  }
-
-
-  .ibox {
-    clear: both;
-    margin-bottom: 25px;
-    margin-top: 0;
-    padding: 0;
-  }
-  .ibox.collapsed .ibox-content {
-    display: none;
-  }
-  .ibox.collapsed .fa.fa-chevron-up:before {
-    content: "\f078";
-  }
-  .ibox.collapsed .fa.fa-chevron-down:before {
-    content: "\f077";
-  }
-  .ibox:after,
-  .ibox:before {
-    display: table;
-  }
-  .ibox-title {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: #ffffff;
-    border-color: #e7eaec;
-    border-image: none;
-    border-style: solid solid none;
-    border-width: 3px 0 0;
-    color: inherit;
-    margin-bottom: 0;
-    padding: 14px 15px 7px;
-    min-height: 48px;
-  }
-  .ibox-content {
-    background-color: #ffffff;
-    color: inherit;
-    padding: 15px 20px 20px 20px;
-    border-color: #e7eaec;
-    border-image: none;
-    border-style: solid solid none;
-    border-width: 1px 0;
-  }
-  .ibox-footer {
-    color: inherit;
-    border-top: 1px solid #e7eaec;
-    font-size: 90%;
-    background: #ffffff;
-    padding: 10px 15px;
   }
