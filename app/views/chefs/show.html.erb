@@ -10,11 +10,11 @@
             <% end %>
               <div class="follow-info-group">
                 <p class="follow-info-item"><strong>235</strong></p><%= link_to "Following", '#', class: "following-item"%>
-                <p class="follow-info-item"><strong>123</strong></p><%= link_to "Followers", '#', class: "followers-item"%>
+                <p class="follow-info-item", id="followers"><strong>123</strong></p><%= link_to "Followers", '#', class: "followers-item"%>
               </div>
             </div>
             <div class="follow-btn">
-            <%= link_to "Follow", follow_chef_path(@user), method: :post, class: "btn btn-secondary my-2"%>
+            <%= render @user %>
             </div>
             <%# <%= link_to "Unfollow" %>
           </div>

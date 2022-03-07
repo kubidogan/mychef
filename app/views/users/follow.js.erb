@@ -1,7 +1,13 @@
 function renderUser(userHTML) {
   console.log("function running");
   const user = document.querySelector("[data-user='<%= @user.id %>']");
+  console.log(user.innerText);
   user.outerHTML = userHTML;
+  if (user.innerText.includes("Following")) {
+    document.getElementById("followers").firstElementChild.textContent = parseInt(document.getElementById("followers").firstElementChild.textContent) - 1;
+  } else {
+    document.getElementById("followers").firstElementChild.textContent = parseInt(document.getElementById("followers").firstElementChild.textContent) + 1;
+  }
 }
 console.log("js hit");
 renderUser('<%= j render @user %>');

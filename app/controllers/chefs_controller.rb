@@ -12,11 +12,15 @@ class ChefsController < ApplicationController
   end
 
   def follow
-    if current_user.follow(@user.id)
-      respond_to do |format|
-        format.html { redirect_to chef_path(@user) }
-        format.js { render "users/follow" }
+    if Follow.where(following: current_user, follower: @user).count == 0
+      if current_user.follow(@user.id)
+        respond_to do |format|
+          format.html { redirect_to chef_path(@user) }
+          format.js { render "users/follow" }
+        end
       end
+    else
+      render :show
     end
   end
 
