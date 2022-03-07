@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # validates :avatar, file_size: { less_than_or_equal_to: 5.megabytes }, file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
-
+  has_many :messages, dependent: :destroy
   has_many :resumes, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :posts, dependent: :destroy
