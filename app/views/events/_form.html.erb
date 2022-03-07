@@ -1,22 +1,26 @@
 <div class="container">
-  <%= simple_form_for @event do |f| %>
-    <%= f.input :name %>
-    <%= f.input :cuisine,
-      as: :check_boxes,
-      collection: ["Chinese", "Italian", "British", "Indian", "Vegan", "Japanese", "Austrian", "French", "Vegetarian"],
-      input_html: { class: "tag-selector" },
-      item_wrapper_class: 'tag-item' %>
-    <%= f.input :address, input_html: { data: { geocoder_target: "address" }, class: "d-none" }, wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-    <%= f.input :price %>
-    <%= f.input :event_time, label: "Event Date", as: :string, required: false, input_html: {class: "datepicker", data: {controller: 'flatpickr'}, id: "event_date"} %>
-    <%= f.input :capacity %>
-    <%= f.input :category,
-      as: :check_boxes,
-      collection: ["Supper Club", "Dine-In", "Festival", "Picnic", "Private Hire", "Brunch"],
-      input_html: { class: "tag-selector" },
-      item_wrapper_class: 'tag-item' %>
-    <%= f.input :photo, as: :file %>
-    <%= link_to "Back", myprofile_path, class: "btn btn-secondary" %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
+  <div class="container-form">
+    <%= simple_form_for @event do |f| %>
+      <%= f.input :name %>
+      <%= f.input :cuisine,
+        as: :check_boxes,
+        collection: ["Chinese", "Italian", "British", "Indian", "Vegan", "Japanese", "Austrian", "French", "Vegetarian"],
+        input_html: { class: "tag-selector" },
+        item_wrapper_class: 'tag-item' %>
+      <%= f.input :address, input_html: { data: { geocoder_target: "address" }, class: "d-none" }, wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+      <%= f.input :price %>
+      <%= f.input :event_time, label: "Event Date", as: :string, required: false, input_html: {class: "datepicker", data: {controller: 'flatpickr'}, id: "event_date"} %>
+      <%= f.input :capacity %>
+      <%= f.input :category,
+        as: :check_boxes,
+        collection: ["Supper Club", "Dine-In", "Festival", "Picnic", "Private Hire", "Brunch"],
+        input_html: { class: "tag-selector" },
+        item_wrapper_class: 'tag-item' %>
+      <%= f.input :photo, as: :file %>
+      <div class="event-buttons">
+        <%= link_to "Back", myprofile_path, class: "btn btn-secondary" %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
