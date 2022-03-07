@@ -10,7 +10,7 @@
     <% end %>
   </div>
    <div class="nav__link nav__link--active">
-    <%= link_to myprofile_path do %>
+    <%= link_to chatrooms_path do %>
      <i class="far fa-comments icon fa-2x"></i>
     <% end %>
   </div>
@@ -25,6 +25,9 @@
       </button>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <% if user_signed_in? %>
+          <li class="nav-item d-flex align-items-center">
+              <strong><%= current_user.username %></strong>
+          </li>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
          <% else %>
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
