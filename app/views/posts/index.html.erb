@@ -1,23 +1,7 @@
-<div class="container feed">
-  <div>
-    <h1 id="feed-title">News Feed</h1>
-  </div>
-      <% @posts.all.each do |post| %>
-        <div class="card-product style=">
-          <% if post.photo.attached? %>
-              <%= cl_image_tag post.photo.key,class: "card-img-top"%>
-          <% end %>
-          <div class="card-product-info">
-            <h5><%= post.user.name %> </h5>
-            <p class="card-title"><%= post.title %></p>
-            <p class="card-text"><%= post.text %></p>
-            <p>Posted at: <%= post.created_at %></p>
-          </div>
-        </div>
-      <% end %>
-</div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<h1 class="feed-header underline-highlight">Happenings</h1>
 
-<button type="button" class="btn btn-secondary postbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Post</button>
+<button type="button" class="btn btn-secondary postbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -32,3 +16,34 @@
     </div>
   </div>
 </div>
+
+<% @posts.all.each do |post| %>
+  <div class="container feed">
+    <div class="col-md-7">
+        <div class="social-feed-box">
+          <div class="social-avatar">
+            <%= cl_image_tag post.user.avatar.key %>
+            <%= post.user.name %>
+            <small class="text-muted"><%= post.created_at %></small>
+          </div>
+
+          <div class="social-body">
+            <p>
+              <strong><%= post.title %></strong><br>
+              <%= post.text %>
+            </p>
+
+            <% if post.photo.attached? %>
+              <%= cl_image_tag post.photo.key,class: "img-responsive"%>
+            <% end %>
+
+            <div class="btn-group">
+              <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i></button>
+              <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i></button>
+              <button class="btn btn-white btn-xs"><i class="fa fa-share"></i></button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+<% end %>
