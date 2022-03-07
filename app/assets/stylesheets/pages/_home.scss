@@ -6,7 +6,7 @@
 .homepage-logo {
   width: 90%;
   position: absolute;
-  top: -10px;
+  top: -30px;
   filter: brightness(90%);
 }
 
@@ -19,7 +19,8 @@
 }
 
 .card-img-top {
-  border-radius: 3px;
+  border-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 .fa {
@@ -27,15 +28,10 @@
 }
 
 .container-homepage-title {
-  // border-radius: 10px;
   padding: 15px;
   height: 224px;
-  // margin: 25px;
   background: url(frame.png);
-  // background: url(logo.png);
-  object-fit:     cover;
-  // background-color: #FAC83A;
-  // background-image: url("landing-title-card.jpg");
+  object-fit: cover;
   background-size: 100% 120%;
   align-items: center;
   position: relative;

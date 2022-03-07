@@ -28,15 +28,45 @@
 .event-header {
   background: #FAC83A;
   color: #123F37;
-  padding: 11px;
+  padding: 15px;
   position: relative;
+  font-family: 'Lobster', sans-serif;
   margin-bottom: 25px;
   text-align: center;
-  font-size: 25px;
+  font-size: 40px;
+}
+
+.form-label {
+  color: #123F37;
+  text-decoration: underline;
+  text-decoration-color: #4FFEBE;
+}
+
+.col-form-label {
+  color: #123F37;
+  text-decoration: underline;
+  text-decoration-color: #4FFEBE;
+}
+
+.event-buttons {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+#new_event {
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary {
-  align-items: center;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.btn-secondary {
+  margin-bottom: 25px;
+  border-radius: 5px;
 }
 
 // #category {
