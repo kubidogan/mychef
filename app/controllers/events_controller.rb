@@ -5,6 +5,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    raise
     @event.user = current_user
     if @event.save
       redirect_to myprofile_path
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to myprofile_path
   end
-  
+
   private
 
   def event_params
