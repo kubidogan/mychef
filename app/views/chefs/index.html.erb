@@ -1,15 +1,16 @@
 <div class="container-index">
   <div class="container-index-title">
     <h1 class="index-title">Chefs</h1>
-    <div class="index-search-form"><%= form_tag chefs_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "index-form-control",
-        placeholder: "Find a Chef"
-      %>
-      <%= submit_tag "Search", class: "btn-index btn-primary" %>
-      <% end %>
-    </div>
+  </div>
+
+  <div class="index-search-form"><%= form_tag chefs_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "index-form-control",
+      placeholder: "Find a Chef"
+    %>
+    <%= submit_tag "Search", class: "btn-index btn-primary" %>
+    <% end %>
   </div>
 
   <div class="container-index">
