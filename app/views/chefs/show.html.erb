@@ -74,10 +74,10 @@
               <div class="card-body">
                 <% @user.reviewee_relationships.each do |review| %>
                   <p> <%= @user[review] %> </p>
-                  <ul>
-                  <li><%= review.comment %></li>
-                  <li><%= "★" * review.rating %></li>
-                  </ul>
+                  <p><%= current_user.name %></p>
+                  <p><%= review.comment %></p>
+                  <p id="stars"><%= "★" * review.rating %></p>
+                  <p><%= review.created_at %></p>
                 <% end %>
               </div>
             </div>
