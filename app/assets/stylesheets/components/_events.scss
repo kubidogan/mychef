@@ -2,3 +2,21 @@
   height: 74px;
   box-shadow: -5px 8px 10px grey;
 }
+
+.event-body {
+  margin-top: 10px;
+  padding-top: 10px;
+  border: 2px solid;
+}
+
+.shadow-sm {
+  margin-bottom: 28px;
+}
+
+.confirmation {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: stretch;
+  text-align: center;
+}

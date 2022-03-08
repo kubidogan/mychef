@@ -1,1 +1,15 @@
-<h1 >Congratulations! You've secured your booking!</h1>
+
+<div class="container confirmation">
+  <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+  <lord-icon
+    src="https://cdn.lordicon.com/gzmgulpl.json"
+    trigger="loop"
+    colors="outline:#0a5c15,primary:#ffffff,secondary:#ffffff"
+    style="width:300px;height:300px">
+  </lord-icon>
+  <h1 >Congratulations!</h1>
+  <h2>Booking confirmed </h2>
+  <h2> @ <%= @current_event.name %></h2>
+  <p>Date Booked: <%= @current_event.event_time%></p>
+  <%= link_to "Email" , chef_path(@user), class:"btn btn-primary" %>
+</div>

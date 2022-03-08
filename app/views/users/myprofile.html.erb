@@ -98,20 +98,18 @@
               <%= cl_image_tag event.photo.key, height: 225, width: 100, class: "card-img-top"%>
             <% end %>
               <div class="card-body">
-                <h3 class="card-name"><% event.name %></h3>
-                <h4 class="card-text"> <%= event.address %></h4>
+                <h2 class="card-text"> <%= event.name %></h2>
+                <p class="card-text"><strong>Address: </strong><%= event.address %></p>
                 <p class="card-text"> <%= event.cuisine %></p>
-                <p class="card-text"> <%= event.price %></p>
+                <p class="card-text"><strong>Price:</strong> £<%= event.price %> /Guest </p>
                 <p class="card-text"> <%= event.category %></p>
-                <p class="card-text"> <%= event.capacity %></p>
-                <p class="card-text"> <%= event.event_time %></p>
-                <div class="d-flex justify-content-between align-items-center">
+                <p class="card-text"> <strong>Capacity:</strong> <%= event.capacity %></p>
+                <div class="event-profile">
                   <div class="btn-group">
                     <%= link_to "Map", event_path(event), class:"btn btn-secondary" %>
                     <button type="button" class="btn btn-secondary">Edit</button>
                     <%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
                   </div>
-                  <small class="text-muted">9 mins</small>
                 </div>
               </div>
             </div>
