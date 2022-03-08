@@ -2,11 +2,15 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
-    <h1>#<%= @chatroom.name %></h1>
   <div class="backbtn">
     <%= link_to chatrooms_path do %>
-      <i class="fas fa-arrow-left"></i>
+      <i class="fas fa-times"></i>
     <% end %>
+  </div>
+  <div class="chat-avatar">
+    <%= cl_image_tag @chatroom.photo.key %>
+    <h1><%= @chatroom.name %></h1>
+    <small class="text-muted">Last seen: <%= distance_of_time_in_words(@chatroom.created_at, Time.now) %> ago</small>
   </div>
 
 
@@ -24,8 +28,8 @@
       placeholder: "Message ##{@chatroom.name}",
       wrapper_html: {class: "flex-grow-1"}
     %>
-    <%= f.input :photo, as: :file %>
     <%= f.submit "Send", class: "btn btn-primary" %>
+    <%= f.input :photo, as: :file %>
   <% end %>
 
 </div>

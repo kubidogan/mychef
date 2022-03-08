@@ -9,6 +9,7 @@ require "uri"
 puts "cleaning db"
 User.destroy_all
 Event.destroy_all
+Chatroom.destroy_all
 puts "Database clean"
 
 puts "creating users"
@@ -52,3 +53,18 @@ Resume.create(user: emma2, experience: "Institute of Culinary Education", title:
 Resume.create(user: emma2, experience: "Restaurant Name", title: "Sous Chef", location: "the Netherlands", start_date: "14/09/2009", end_date: "14/09/2011")
 
 puts "created users and chefs"
+
+ainsley = Chatroom.create(name: "Ainsley Harriot")
+file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646739562/Ainsley_Harriott_nf10tu.webp')
+ainsley.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+sorrel = Chatroom.create(name: "Sorrel-Moseley-Williams")
+file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646739562/Sorrel-Moseley-Williams_bvlk3d.webp')
+sorrel.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+gordon = Chatroom.create(name: "Gordon Ramsay")
+file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646739562/Gordon-Ramsay_reznug.webp')
+gordon.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+kristen = Chatroom.create(name: "Kristen Hawley")
+file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646739562/Kristen_Hawley_1_pzph37.webp')
+kristen.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+puts "created chatrooms"
