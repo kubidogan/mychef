@@ -44,6 +44,8 @@ class EventsController < ApplicationController
       :event_time,
       :address,
       :capacity,
+      :latitude,
+      :longitude,
       :photo
     )
   end

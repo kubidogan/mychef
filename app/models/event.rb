@@ -4,6 +4,4 @@ class Event < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
   has_many :bookings, dependent: :destroy
-
-  CATEGORIES = ["Supper Club", "Fine Dine", "Private Hire", "Brunch"]
 end
