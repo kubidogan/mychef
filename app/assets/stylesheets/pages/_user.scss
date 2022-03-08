@@ -1,10 +1,25 @@
-// .form-actions {
-//   background: #FAC83A;
-//   color: #123F37;
-//   padding: 15px;
-//   position: relative;
-//   font-family: 'Lobster', sans-serif;
-//   margin-bottom: 25px;
-//   text-align: center;
-//   font-size: 40px;
-// }
+.edit-title {
+  color: #123F37;
+  padding: 15px;
+  position: relative;
+  font-family: 'Lobster', sans-serif;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.avatar-edit {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-user-button {
+  position: absolute;
+  top: 0px;
+}
+
+.user-cancel {
+  margin-bottom: 80px;
+  font-size: 10px;
+}

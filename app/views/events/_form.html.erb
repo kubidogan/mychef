@@ -1,4 +1,9 @@
 <div class="container">
+  <div class="backbtn edit-user-button">
+    <%= link_to :back do %>
+      <i class="fas fa-times"></i>
+    <% end %>
+  </div>
   <div class="container-form">
     <%= simple_form_for @event do |f| %>
       <%= f.input :name %>
@@ -18,9 +23,11 @@
         item_wrapper_class: 'tag-item' %>
       <%= f.input :photo, as: :file %>
       <div class="event-buttons">
-        <%= link_to "Back", myprofile_path, class: "btn btn-secondary" %>
-        <%= f.submit "Submit", class: "btn btn-primary" %>
+        <%= f.submit "Submit", class: "btn btn-secondary" %>
       </div>
     <% end %>
   </div>
 </div>
+
+
+<%# <%= link_to "Back", myprofile_path, class: "btn btn-secondary" %>
