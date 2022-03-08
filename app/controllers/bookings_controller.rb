@@ -16,6 +16,8 @@ class BookingsController < ApplicationController
 
   def confirmation
     @booking = Booking.find(params[:booking_id])
+    @current_event = Event.find(params[:event_id])
+    @user = @current_event.user
   end
 
   private
