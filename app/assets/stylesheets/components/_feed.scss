@@ -1,11 +1,14 @@
-body{margin-top:20px;
+body{
+  margin-top:20px;
   background:#eee;
   }
+
   /* Social feed */
   .username-style {
     text-decoration: underline;
     font-weight: 550;
   }
+
   .postbtn {
     display: block;
     width: 100%;
@@ -17,6 +20,7 @@ body{margin-top:20px;
     font-size: larger;
     background-color: #8abb8a;
   }
+
   .btn-group-feed {
     display: flex;
     align-items: center;
@@ -26,14 +30,18 @@ body{margin-top:20px;
   .btn-group-feed > .btn{
     color: gray !important;
   }
+
   .feed-header {
-    text-align: center;
-    padding: 20px;
-    color: #123F37;
     background: #FAC83A;
-    font-weight: bold;
-    margin-bottom: 25px;
+    position: relative;
+    color: #123F37;
+    font-size: 45px;
+    padding: 27px;
+    text-align: center;
     font-family: 'Lobster', sans-serif;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    padding-top: 25px;
   }
 
   .social-feed-box {
@@ -46,43 +54,54 @@ body{margin-top:20px;
   .social-action {
     margin: 15px;
   }
+
   .social-avatar {
     padding: 15px 15px 0 15px;
   }
+
   .social-comment .social-comment {
     margin-left: 45px;
   }
+
   .social-avatar img {
     height: 50px;
     width: 50px;
     margin-right: 10px;
     border-radius: 50%;
   }
+
   .social-avatar .media-body a {
     font-size: 14px;
     display: block;
   }
+
   .social-body {
     padding: 15px;
   }
+
   .social-body img {
     margin-bottom: 10px;
   }
+
   .social-footer {
     border-top: 1px solid #e7eaec;
     padding: 10px 15px;
     background: #f9f9f9;
   }
+
   .social-footer .social-comment img {
     width: 32px;
     margin-right: 10px;
   }
+
   .social-comment:first-child {
     margin-top: 0;
   }
+
   .social-comment {
     margin-top: 15px;
   }
+
   .social-comment textarea {
     font-size: 12px;
   }
