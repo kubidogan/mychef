@@ -16,7 +16,7 @@
   </div>
 </div>
 
-  <section class="py-5 text-center container">
+  <section class="py-5 text-center container-bio-header">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="chef-overview">
@@ -24,12 +24,12 @@
           <%= cl_image_tag current_user.avatar.key, class:"avatar-profile" %>
         </div>
           <% if current_user.typeofuser%>
-          <%= link_to "View Profile", chef_path(current_user), class: "btn btn-secondary my-2"%>
+          <%= link_to "View Profile", chef_path(current_user), class: "btn btn-secondary my-2-profile"%>
           <% end %>
       </div>
     </section>
 
-    <section class="py-5 text-center container">
+    <section class="py-5 text-center container-bio">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Your Bio</h1>
