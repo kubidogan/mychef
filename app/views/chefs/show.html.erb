@@ -21,7 +21,9 @@
         </div>
           <h2 class="fw-light text-start" style="margin: 15px;"><%= @user.name %></h2>
           <p class="lead text-muted text-start" style="margin: 15px; font-size: 18px;"><%= @user.bio %></p>
-          <%= link_to "Leave a review", new_review_path(@user), class: "btn btn-secondary my-2"%>
+          <% unless current_user == @user%>
+            <%= link_to "Leave a review", new_review_path(@user), class: "btn btn-secondary my-2"%>
+          <% end %>
       </div>
     </section>
     <section>
