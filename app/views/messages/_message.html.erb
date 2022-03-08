@@ -1,9 +1,9 @@
 <div id="message-<%= message.id %>">
   <small>
-    <strong><%= message.user.username %></strong>
+    <p id="message-name"><strong><%= message.user.name %></strong></p>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
-  <p><%= message.content %></p>
+  <p id="message-content"><%= message.content %></p>
   <% if message.photo.attached? %>
     <%= cl_image_tag message.photo.key, class:"message-img"%>
   <% end %>
