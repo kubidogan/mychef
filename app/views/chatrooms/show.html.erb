@@ -29,7 +29,14 @@
       wrapper_html: {class: "flex-grow-1"}
     %>
     <%= f.submit "Send", class: "btn btn-primary" %>
-    <%= f.input :photo, as: :file %>
+    <div style="display: contents;">
+      <%= f.input :photo, label: false, as: :file do %>
+        <i class="fas fa-paperclip" style="font-size: 40px;
+      margin-left: 5px;"></i>
+      <% end %>
+      <a href="tel:123-456-7890"><i class="fa fa-phone" style="    font-size: 35px;
+    margin-left: 10px;
+    margin-top: 4px;"></i></a>
+    </div>
   <% end %>
-
 </div>
