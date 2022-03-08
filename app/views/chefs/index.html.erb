@@ -35,7 +35,7 @@
                 <%ratings << review.rating%>
               <%end%>
               <% avg = ratings.sum / ratings.count.to_f %>
-              <span><%= avg %></span>
+              <p><i class="fa fa-solid fa fa-star"></i><%=avg%> (<%= ratings.count %>)</p>
               <% end %>
               <h3 class="index-card-text-restaurant" id="index-text">Cuisine: <%= user.cuisine %> <h3>
               </div>
