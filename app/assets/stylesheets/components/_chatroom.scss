@@ -8,9 +8,10 @@
   flex-grow: 1;
 
   h1 {
-    border-bottom: 1px solid $gray-200;
+    border-bottom: 1px solid #e9ecef;
     margin-bottom: 0;
     padding: 1rem;
+    margin-left: 40px;
   }
 
   .messages {
@@ -33,4 +34,57 @@
   position: absolute;
   right: 20px;
   margin: 10px;
+  font-size: 20px;
+  top: 15px;
+}
+
+.chat-product {
+  overflow: hidden;
+  height: 80px;
+  background: white;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
+.chat-product img {
+  height: 80px;
+  padding: 10px;
+  width: 88px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.chat-product h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.chat-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.chat-product .chat-product-infos {
+  padding: 16px;
+}
+
+.chat-avatar {
+  padding: 15px 15px 0 15px;
+}
+
+.chat-avatar img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 14px;
+  top: 30px;
 }

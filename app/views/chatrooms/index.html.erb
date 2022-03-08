@@ -1,7 +1,13 @@
 <div class="container chatpage">
   <% @chatrooms.each do |chat| %>
-    <ul class="fa-ul">
-      <li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span><%= link_to chat.name, chatroom_path(chat) %></li>
-    </ul>
+    <div class="chat-product">
+      <% if chat.photo.attached? %>
+        <%= cl_image_tag chat.photo.key %>
+      <% end %>
+        <div class="chat-product-infos">
+          <h2><%= link_to chat.name, chatroom_path(chat) %></h2>
+          <p>Last seen: <%= chat.created_at %></p>
+        </div>
+    </div>
   <% end %>
 </div>
