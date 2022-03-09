@@ -23,4 +23,12 @@ ActiveStorage.start()
 
 document.addEventListener("turbolinks:load", ()=> {
   initStarRating();
+
+document.querySelector(".landing-btn").addEventListener("click", () => {
+  const landingImage = document.querySelector(".landing-image");
+  landingImage.classList.add("hide-landing");
+  // setTimeout(() => {
+  //   landingImage.style.zIndex = 0;
+  // }, 1000)
+})
 });
