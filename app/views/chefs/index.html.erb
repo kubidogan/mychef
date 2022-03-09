@@ -27,19 +27,19 @@
                 <%= cl_image_tag user.avatar.key, height: 225, width: 100, class: "card-img-top"%>
               <% end %>
               <div class="index-text">
-              <h2 class="index-card-text-name"> <%= user.name %> </h2>
-              <% unless Review.where(reviewee_id: user.reviewees.ids.first).empty? %>
-              <% reviews = Review.where(reviewee_id: user.reviewees.ids) %>
-              <%ratings = []%>
-              <%reviews.each do |review|%>
-                <%ratings << review.rating%>
-              <%end%>
-              <% avg = ratings.sum / ratings.count.to_f %>
-              <p><i class="fa fa-solid fa fa-star"></i><%=avg%> (<%= ratings.count %>)</p>
-              <% end %>
-              <h3 class="index-card-text-restaurant" id="index-text">Cuisine: <%= user.cuisine %> <h3>
+                <% unless Review.where(reviewee_id: user.reviewees.ids.first).empty? %>
+                  <% reviews = Review.where(reviewee_id: user.reviewees.ids) %>
+                  <%ratings = []%>
+                    <%reviews.each do |review|%>
+                      <%ratings << review.rating%>
+                    <%end%>
+                  <% avg = ratings.sum / ratings.count.to_f %>
+                  <p class="index-card-rating"><i class="fa fa-solid fa fa-star"></i><%=avg%> (<%= ratings.count %>)</p>
+                <% end %>
+                <h2 class="index-card-text-name"> <%= user.name %> </h2>
+                <h2 class="index-card-text-restaurant">Cuisine: <%= user.cuisine %></h2>
               </div>
-              <% end %>
+            <% end %>
           </div>
         <% end %>
     </div>

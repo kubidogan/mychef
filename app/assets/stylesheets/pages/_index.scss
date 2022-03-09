@@ -66,27 +66,32 @@
 .card-img-top {
   border-radius: 15px;
   max-width: 100%;
-  height: 350px;
+  height: 380px;
   object-fit: cover;
+}
+
+.index-card-rating {
+  padding-top: 5px;
+}
+
+.index-card-rating i {
+  color:#FAC83A
 }
 
 .index-card-text-name {
   font-family: 'Poppins', sans-serif;
-  padding-top: 10px;
   font-weight: bold;
   font-size: 20px;
-  color: black;
+  color: #123F37;
   text-decoration: none;
 }
 
 .index-card-text-restaurant {
   font-family: 'Poppins', sans-serif;
-  padding-left: 12px;
-  font-style: italic;
-  font-size: 20px;
-  color: #123F37;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
   text-decoration: none;
-  padding-bottom: 10px;
 }
 
 .index-card-icons {
@@ -94,6 +99,7 @@
   position: absolute;
   top: 200px;
   left: 230px;
+  visibility: hidden;
 }
 
 a {
