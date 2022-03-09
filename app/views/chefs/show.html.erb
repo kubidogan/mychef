@@ -9,8 +9,8 @@
               <%= cl_image_tag @user.avatar.key, class: "avatar-xlarge rounded-circle" %>
             <% end %>
               <div class="follow-info-group">
-                <p class="follow-info-item"><strong>235</strong></p><%= link_to "Following", '#', class: "following-item"%>
-                <p class="follow-info-item", id="followers"><strong>123</strong></p><%= link_to "Followers", '#', class: "followers-item"%>
+                <p class="follow-info-item", id="following"><strong>235</strong></p><%= link_to "Following", '#', class: "following-item"%>
+                <p class="follow-info-item", id="followers"><strong>149</strong></p><%= link_to "Followers", '#', class: "followers-item"%>
               </div>
             </div>
             <div class="follow-btn">
@@ -103,4 +103,11 @@
       </div>
     </div>
   </section>
+  <%# <div class="container vid">
+    <video width="320" height="240" controls>
+      <source src="https://res.cloudinary.com/dk3fbg9zm/video/upload/v1646839455/ChefVid_o5bxq7.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+  </div> %>
 </main>

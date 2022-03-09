@@ -24,13 +24,19 @@
 .follow-info-group {
   position: absolute;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 100px;
   right: 10px;
+}
+
+#followers {
+  position: relative;
+  top: -16px;
+  left: 46px;
+}
+
+#following {
+  position: relative;
+  bottom: 16px;
+  left: 45px;
 }
 
 .follow-btn {
@@ -76,3 +82,29 @@
   width: 20%;
   color: #4ffebf;
 }
+
+.follow-ing {
+  position: relative;
+  top: 80px;
+  right: 13px;
+  width: 180px;
+}
+
+// #review-img {
+//   width: 100%;
+//   justify-content: center;
+//   display: flex;
+
+  #review-img img {
+    border-radius: 50%;
+    width: 70%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
