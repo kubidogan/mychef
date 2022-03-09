@@ -1,7 +1,7 @@
 .chatroom {
   background: white;
-  margin-top: 9px;
-  height: calc(100vh - 75px);
+  // margin-top: 9px;
+  height: calc(100vh - 55px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,7 +22,7 @@
 
   #new_message {
     border-top: 1px solid $gray-200;
-    padding: 1rem;
+    padding: 0.5rem 0;
 
     .form-group {
       margin-bottom: 0;
@@ -90,16 +90,72 @@
 }
 
 #message-content p {
-  font-size: 27px;
+  font-size: 20px;
+  margin: 0;
 }
 
 #message-content {
-  border: 1px solid #0084FF;
-  border-radius: 50px;
-  padding-left: 20px;
+  border-radius: 26px;
+  padding: 9px 20px;
   height: auto;
+  // background-color: #0084FF;
+  color: white;
+  width: fit-content;
 }
 
 #message-name {
   font-size: 18px;
+  display: flex;
+  justify-items: unset;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-bottom: 1px;
+  margin-top: 10px;
+}
+
+#message-time {
+  display: flex;
+  justify-items: unset;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.upload-photo {
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  font-size: 28px;
+  padding-top: 12px;
+}
+
+.sent-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  #message-content {
+    background-color: #0084FF;
+    border-top-right-radius: 2px;
+  }
+}
+
+.received-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  #message-content {
+    background-color: gray;
+    border-top-left-radius: 2px;
+  }
+}
+
+.message_content, .message_photo {
+  margin: 0 !important;
+}
+
+#new_message {
+  .btn-primary {
+    margin: 0 6px;
+  }
 }
