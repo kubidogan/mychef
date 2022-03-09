@@ -1,13 +1,13 @@
 <div class="container-index">
   <div class="container-index-title">
-    <h1 class="index-title">Chefs</h1>
+    <h1 class="index-title">Find your chef</h1>
   </div>
 
   <div class="index-search-form"><%= form_tag chefs_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "index-form-control",
-      placeholder: "Find a Chef"
+      placeholder: "Who are you looking for?"
     %>
     <%= submit_tag "Search", class: "btn-index btn-primary" %>
     <% end %>
@@ -27,17 +27,22 @@
                 <%= cl_image_tag user.avatar.key, height: 225, width: 100, class: "card-img-top"%>
               <% end %>
               <div class="index-text">
-                <% unless Review.where(reviewee_id: user.reviewees.ids.first).empty? %>
-                  <% reviews = Review.where(reviewee_id: user.reviewees.ids) %>
-                  <%ratings = []%>
-                    <%reviews.each do |review|%>
-                      <%ratings << review.rating%>
-                    <%end%>
-                  <% avg = ratings.sum / ratings.count.to_f %>
-                  <p class="index-card-rating"><i class="fa fa-solid fa fa-star"></i><%=avg%> (<%= ratings.count %>)</p>
-                <% end %>
-                <h2 class="index-card-text-name"> <%= user.name %> </h2>
-                <h2 class="index-card-text-restaurant">Cuisine: <%= user.cuisine %></h2>
+                <div class="index-card-name-rating">
+                  <div class="index-card-text-name"> <%= user.name %> </div>
+                  <% unless Review.where(reviewee_id: user.reviewees.ids.first).empty? %>
+                    <% reviews = Review.where(reviewee_id: user.reviewees.ids) %>
+                    <%ratings = []%>
+                      <%reviews.each do |review|%>
+                        <%ratings << review.rating%>
+                      <%end%>
+                    <% avg = ratings.sum / ratings.count.to_f %>
+                    <div class="index-card-review-rating">
+                      <div class="index-card-rating"><i class="fa fa-solid fa fa-star"></i><%=avg%></div>
+                      <div class="index-card-rating index-card-review-count">(<%= ratings.count %>)</div>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="index-card-text-restaurant">Cuisine: <%= user.cuisine %></div>
               </div>
             <% end %>
           </div>
@@ -45,19 +50,3 @@
     </div>
   </div>
 </div>
-
-
-
- <%# <% @users.each do |chef| %>
-      <%# <% if chef.typeofuser?  %>
-      <%# <ul>
-      <li><%= chef.name %>
-      <%# <%= chef.cuisine %>
-      <%# <%= chef.price %>
-      <%# <%= link_to "VIEW", chef_path(chef) %>
-      <%# </li>
-      </ul>
-      <% else %>
-      <%# <p>no chef</p>
-      <% end %>
-      <%# <% end %>

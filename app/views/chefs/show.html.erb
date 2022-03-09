@@ -78,8 +78,7 @@
             <div class="card shadow-sm">
               <div class="card-body">
                 <% @user.reviewee_relationships.each do |review| %>
-                  <p> <%= @user[review] %> </p>
-                  <p><%= current_user.name %></p>
+                  <p><strong><%= review.reviewer.name %></strong></p>
                   <p><%= review.comment %></p>
                   <p id="stars"><%= "★" * review.rating %></p>
                   <p><%= review.created_at %></p>
