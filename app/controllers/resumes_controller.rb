@@ -21,6 +21,7 @@ class ResumesController < ApplicationController
       :experience,
       :start_date,
       :end_date,
+      :still_working,
     )
   end
 end

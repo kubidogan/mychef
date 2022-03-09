@@ -9,17 +9,28 @@
 }
 
 .avatar-edit {
-  margin: 0 auto;
-  display: flex;
+  // margin: 0 auto;
+  // display: flex;
   justify-content: center;
 }
 
 .edit-user-button {
   position: absolute;
   top: 0px;
+  z-index: 1;
+}
+
+.cancel-title {
+  font-size: 20px;
 }
 
 .user-cancel {
   margin-bottom: 80px;
   font-size: 10px;
 }
+
+// .sticky {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+// }

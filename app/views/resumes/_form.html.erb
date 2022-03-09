@@ -4,7 +4,7 @@
     <%= section.input :experience %>
     <%= section.input :location %>
     <%= section.input :start_date %>
-    <%= section.input_field :still_working, collection: Resume::STILL_WORKING, as: :check_boxes, label: "", class: "check_box" %>
+    <%= section.input :still_working, label: "present" %>
     <%= section.input :end_date %>
     <%= section.submit class: "submit_button" %>
   <% end %>
