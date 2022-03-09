@@ -15,29 +15,30 @@
     <button class="dropdown-item" type="button">Edit bio</button> %>
   </div>
 </div>
+<div class="profile-body">
 
   <section class="py-5 text-center container-bio-header">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="chef-overview">
-        <h1>Hello <%= current_user.name %></h1>
+          <%# <h1>Hello <%= current_user.name</h1> %>
           <%= cl_image_tag current_user.avatar.key, class:"avatar-profile" %>
         </div>
           <% if current_user.typeofuser%>
-          <%= link_to "View Profile", chef_path(current_user), class: "btn btn-secondary my-2-profile"%>
+            <%= link_to "View Profile", chef_path(current_user), class: "btn btn-secondary my-2-profile"%>
           <% end %>
       </div>
     </div>
   </section>
 
-    <section class="py-5 text-center container-bio">
+  <section class="py-5 text-center container-bio">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Your Bio</h1>
-        <p class="lead text-muted">Your bio is a short intro to your customers on what makes you special
-        </p>
-        <p>
-        <div class="edit-bio"><p><%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary my-2"%></p></div>
+        <p class="lead text-muted">Your bio is a short intro to your customers on what makes you special</p>
+        <div class="edit-bio">
+          <p><%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary my-2"%></p>
+        </div>
         <div class="card shadow-sm">
           <p class="lead text-muted" style="padding: 10px; text-align: center; color: black;"><%= current_user.bio %></p>
         </div>
@@ -66,13 +67,13 @@
                     <div class="d-flex justify-content-between align-items-center">
                     </div>
                   </div>
-            <% end %>
-                </div>
+                <% end %>
               </div>
+            </div>
           </div>
         </div>
       </div>
-      </div>
+    </div>
   </section>
 
   <section class="py-5 text-center container">
@@ -86,34 +87,35 @@
         </p>
       </div>
     </div>
-  <div class="album py-5 bg-light">
-    <div class="container myprofile">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <% current_user.events.each do |event| %>
-            <div class="card shadow-sm">
-            <% if event.photo.attached? %>
-              <%= cl_image_tag event.photo.key, height: 225, width: 100, class: "card-img-top"%>
-            <% end %>
-              <div class="card-body">
-                <h2 class="card-text"> <%= event.name %></h2>
-                <p class="card-text"><strong>Address: </strong><%= event.address %></p>
-                <p class="card-text"> <%= event.cuisine %></p>
-                <p class="card-text"><strong>Price:</strong> £<%= event.price %> /Guest </p>
-                <p class="card-text"> <%= event.category %></p>
-                <p class="card-text"> <strong>Capacity:</strong> <%= event.capacity %></p>
-                <div class="event-profile">
-                  <div class="btn-group">
-                    <%= link_to "Map", event_path(event), class:"btn btn-secondary" %>
-                    <button type="button" class="btn btn-secondary">Edit</button>
-                    <%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
+    <div class="album py-5 bg-light">
+      <div class="container myprofile">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <% current_user.events.each do |event| %>
+              <div class="card shadow-sm">
+                <% if event.photo.attached? %>
+                  <%= cl_image_tag event.photo.key, height: 225, width: 100, class: "card-img-top"%>
+                <% end %>
+                <div class="card-body">
+                  <h2 class="card-text"> <%= event.name %></h2>
+                  <p class="card-text"><strong>Address: </strong><%= event.address %></p>
+                  <p class="card-text"> <%= event.cuisine %></p>
+                  <p class="card-text"><strong>Price:</strong> £<%= event.price %> /Guest </p>
+                  <p class="card-text"> <%= event.category %></p>
+                  <p class="card-text"> <strong>Capacity:</strong> <%= event.capacity %></p>
+                  <div class="event-profile">
+                    <div class="btn-group">
+                      <%= link_to "Map", event_path(event), class:"btn btn-secondary" %>
+                      <button type="button" class="btn btn-secondary">Edit</button>
+                      <%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
