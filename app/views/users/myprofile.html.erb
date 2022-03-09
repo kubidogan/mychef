@@ -9,7 +9,7 @@
     <%= link_to "Edit bio", myprofile_experiences_new_path, class: "nav-link dropdown-item" %>
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link dropdown-item" %>
 
-<%#
+    <%#
     <button class="dropdown-item" type="button">Profile settings</button>
     <button class="dropdown-item" type="button">Create event</button>
     <button class="dropdown-item" type="button">Edit bio</button> %>
@@ -27,7 +27,8 @@
           <%= link_to "View Profile", chef_path(current_user), class: "btn btn-secondary my-2-profile"%>
           <% end %>
       </div>
-    </section>
+    </div>
+  </section>
 
     <section class="py-5 text-center container-bio">
     <div class="row py-lg-5">
@@ -39,8 +40,6 @@
         <div class="edit-bio"><p><%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary my-2"%></p></div>
         <div class="card shadow-sm">
           <p class="lead text-muted" style="padding: 10px; text-align: center; color: black;"><%= current_user.bio %></p>
-          <div class="d-flex justify-content-between align-items-center">
-          </div>
         </div>
       </div>
     </div>
@@ -62,19 +61,18 @@
                 <% current_user.resumes.each do |section| %>
                   <div class="card shadow-sm">
                     <ul>
-                      <li class="lead text-muted" style="padding: 10px; text-align: center; color: black;"><%= section.experience %> | <%= section.start_date %> - <%= section.end_date %></li>
+                      <li class="lead text-muted" style="padding: 10px; text-align: center; color: black; list-style: none;"><%= section.experience %> | <%= section.start_date %> - <%= section.still_working ? "present" : section.end_date %></li>
                     </ul>
                     <div class="d-flex justify-content-between align-items-center">
                     </div>
                   </div>
+            <% end %>
                 </div>
               </div>
-            <% end %>
           </div>
         </div>
       </div>
       </div>
-    </div>
   </section>
 
   <section class="py-5 text-center container">
@@ -118,4 +116,4 @@
       </div>
     </div>
   </div>
-  </section>
+</section>
