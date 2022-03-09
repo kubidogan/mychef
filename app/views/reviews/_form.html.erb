@@ -1,5 +1,14 @@
-<div class="container">
-  <div class="container-form review">
+<div class="container review-form">
+  <div id="review-img">
+    <%= cl_image_tag @user.avatar.key %>
+  </div>
+
+  <div style="text-align: center;">
+    <%= @user.bio %>
+  </div>
+
+  <div>
+    <h1>Leave a review</h1>
     <%= simple_form_for @review, url: chef_reviews_path(@user) do |f| %>
       <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
       <%= f.input :comment, as: :text %>
