@@ -73,11 +73,12 @@ kristen.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 puts "created chatrooms"
 
+
 4.times do |i|
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: kubi.id, comment: Faker::Restaurant.review, rating: rand(1..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: carolin.id, comment: Faker::Restaurant.review, rating: rand(1..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: david.id, comment: Faker::Restaurant.review, rating: rand(1..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: emma.id, comment: Faker::Restaurant.review, rating: rand(1..5))
+  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: kubi.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: carolin.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: david.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: emma.id, comment: Faker::Restaurant.review, rating: rand(3..5))
 end
 
 puts "created reviews"
