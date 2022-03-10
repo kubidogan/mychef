@@ -44,11 +44,10 @@ file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646408064/e
 emma2.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 ain = User.create(username: "ains_h", email: "ainsleyh@hotmail.com", password: "password", typeofuser: true, name: "Ainsley Harriot", cuisine: "TV Chef", price: 2, address: "Oude Waal 40, 1011 CE, Amsterdam, the Netherlands", longitude: "52.3724081867893", latitude: "4.905130155947044", bio: " The legend from Ready Steady Cook" )
 file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646739562/Ainsley_Harriott_nf10tu.webp')
-ain.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-
+ain.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 gord = User.create(username: "gordon_r", email: "gordonr@hotmail.com", password: "password", typeofuser: true, name: "Gordon Ramsey", cuisine: "TV Chef", price: 2, address: "Oude Waal 40, 1011 CE, Amsterdam, the Netherlands", longitude: "52.3724081867893", latitude: "4.905130155947044", bio: " Hells Kitchen" )
 file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646739562/Gordon-Ramsay_reznug.webp')
-gord.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+gord.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 reviewees = [kubi2, carolin2, david2, emma2]
 
