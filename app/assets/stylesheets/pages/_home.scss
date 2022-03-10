@@ -41,6 +41,7 @@
 }
 .container-homepage {
   padding-bottom: 5px;
+  background: #f9f7e8;
 }
 
 .homepage-logo {
@@ -66,15 +67,25 @@
 .fa {
   margin-right: 5px;
 }
+.home-title {
+  font-size: 60px;
+  font-family: lobster;
+  color: #123f37;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 20px;
+}
 
 .container-homepage-title {
   padding: 15px;
-  height: 224px;
-  background: url(frame.png);
+  height: 160px;
+  background: url(home-title.png);
   object-fit: cover;
-  background-size: 100% 120%;
+  background-size: cover;
   align-items: center;
   position: relative;
+  justify-content: center;
 }
 
 .btn-explore {
@@ -102,7 +113,7 @@
   font-family: 'Poppins', sans-serif;
   top: 5%;
   color: #FB983C;
-  font-weight: bold;
+  font-weight: bolder;
   padding-left: 8px;
 }
 
