@@ -1,6 +1,8 @@
 <div class="container review-form">
   <div id="review-img">
-    <%= cl_image_tag @user.avatar.key %>
+    <% if @user.avatar.attached? %>
+      <%= cl_image_tag @user.avatar.key %>
+    <% end %>
   </div>
 
   <div style="text-align: center;">
