@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    # @users = User.find(params[:id])
+    # @user = User.find(params[:id])
     @event = Event.find(params[:id])
     if @event.user == current_user
       @events = current_user.events
