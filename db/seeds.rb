@@ -55,7 +55,7 @@ emma2.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 ain = User.create(username: "ains_h", email: "ainsleyh@hotmail.com", password: "password", typeofuser: true, name: "Ainsley Harriot", cuisine: "TikTk Chef", price: 3, address: "Oude Waal 40, 1011 CE, Amsterdam, the Netherlands", longitude: "52.3724081867893", latitude: "4.905130155947044", bio: " The legend from Ready Steady Cook" )
 file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646739562/Ainsley_Harriott_nf10tu.webp')
 ain.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-david2 = User.create(username: "chef_david", email: "davidm@hotmail.com", password: "password", typeofuser: true, name: "David McGroarty-Manley ", cuisine: "Soho House", price: 1, address: "92 Kensington Park Rd, London W11 2PN, United Kingdom", longitude: "51.51324223258976", latitude: "-0.2027338195841721", bio: "I am the Chef Patron of Core by David McGroarty-Manley which opened in 2017. Previously I was Chef Patron at Restaurant Gordon Ramsay from 2012 to 2016." )
+david2 = User.create(username: "chef_david", email: "davidm@hotmail.com", password: "password", typeofuser: true, name: "David McManley ", cuisine: "Soho House", price: 1, address: "92 Kensington Park Rd, London W11 2PN, United Kingdom", longitude: "51.51324223258976", latitude: "-0.2027338195841721", bio: "I am the Chef Patron of Core by David McGroarty-Manley which opened in 2017. Previously I was Chef Patron at Restaurant Gordon Ramsay from 2012 to 2016." )
 file = URI.open('https://res.cloudinary.com/dk3fbg9zm/image/upload/v1646408063/david_bjvlgj.jpg')
 david2.avatar.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 gord = User.create(username: "gordon_r", email: "gordonr@hotmail.com", password: "password", typeofuser: true, name: "Gordon Ramsey", cuisine: "Hells Kitchen", price: 2, address: "Oude Waal 40, 1011 CE, Amsterdam, the Netherlands", longitude: "52.3724081867893", latitude: "4.905130155947044", bio: " Hells Kitchen" )
@@ -94,14 +94,14 @@ kristen.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 puts "created chatrooms"
 reviewees = [kubi2, carolin2, david2, emma2, roberto, gord, ain, selin]
-7.times do |i|
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: kubi.id, comment: Faker::Restaurant.review, rating: rand(3..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: carolin.id, comment: Faker::Restaurant.review, rating: rand(3..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: david.id, comment: Faker::Restaurant.review, rating: rand(3..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: emma.id, comment: Faker::Restaurant.review, rating: rand(3..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: zoe.id, comment: Faker::Restaurant.review, rating: rand(3..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: ebony.id, comment: Faker::Restaurant.review, rating: rand(3..5))
-  Review.create!(reviewee_id: reviewees[i - 1].id, reviewer_id: michael.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+8.times do |i|
+  Review.create!(reviewee_id: reviewees[i].id, reviewer_id: kubi.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i].id, reviewer_id: carolin.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i].id, reviewer_id: david.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i].id, reviewer_id: emma.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i].id, reviewer_id: zoe.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i].id, reviewer_id: ebony.id, comment: Faker::Restaurant.review, rating: rand(3..5))
+  Review.create!(reviewee_id: reviewees[i].id, reviewer_id: michael.id, comment: Faker::Restaurant.review, rating: rand(3..5))
 end
 
 puts "created reviews"
