@@ -3,7 +3,7 @@
   <% if current_user.is_following?(user.id) %>
     <%= link_to "Following", unfollow_chef_path(user.id), method: :post, remote: true, class: "btn btn-secondary my-2 follow-ing"%>
   <% else %>
-    <%= link_to "Follow", follow_chef_path(user.id), method: :post, remote: true, class: "btn btn-secondary my-2, follow-ing" %>
+    <%= link_to "Follow", follow_chef_path(user.id), method: :post, remote: true, class: "btn btn-secondary my-2 follow-ing" %>
   <% end %>
 <%# </li> %>
 </span>
