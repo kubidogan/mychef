@@ -21,10 +21,12 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="chef-overview">
-          
+
           <h1>Hello <%= current_user.name %></h1>
           <% if current_user.avatar.attached? %>
             <%= cl_image_tag current_user.avatar.key, class:"avatar-profile" %>
+          <% else %>
+            <%= image_tag "logo.png", alt: "default avatar"%>
           <% end %>
 
         </div>
