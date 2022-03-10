@@ -15,7 +15,12 @@ class EventsController < ApplicationController
 
   def show
     # @users = User.find(params[:id])
-    @events = current_user.events
+    @event = Event.find(params[:id])
+    if @event.user == current_user
+      @events = current_user.events
+    else
+      @events = @event.user.events
+    end
     @markers = @events.geocoded.map.each do |event|
       {
         lat: event.latitude,

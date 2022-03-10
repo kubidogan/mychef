@@ -24,7 +24,7 @@
             <% if event.capacity > event.bookings.count %>
             <%= simple_form_for [event, @booking] do |f| %>
             <%= f.button :submit, "Attend event", class: "btn btn-secondary my-2" %>
-            <%= link_to "Map", event_path, class: "btn btn-primary my-2" %>
+            <%= link_to "Map", event_path(event), class: "btn btn-primary my-2" %>
             <% end %>
             <% else %>
             <p>The event is fully booked</p>
