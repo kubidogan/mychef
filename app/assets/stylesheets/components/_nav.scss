@@ -14,10 +14,13 @@ body {
   z-index: 1;
 }
 
-// .nav-pills {
-//   display: flex;
-//   justify-content: center;
-// }
+.nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+}
 
 .nav__link {
   display: flex;

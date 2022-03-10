@@ -39,9 +39,6 @@
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-experience-tab" data-bs-toggle="pill" data-bs-target="#pills-experience" type="button" role="tab" aria-controls="pills-experience" aria-selected="false">Experience</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-posts-tab" data-bs-toggle="pill" data-bs-target="#pills-posts" type="button" role="tab" aria-controls="pills-posts" aria-selected="false">Posts</button>
-          </li>
         </ul>
         <div class="tab-content" id="pills-tabContent" >
           <div class="tab-pane fade show active" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
@@ -50,26 +47,6 @@
                 <h2 class="event-banner"><u class="underline-highlight">Upcoming Events</u></h2>
                 <%= render "event_card"  %>
               </div>
-              <%# <div class="col">
-                <h2 class="event-banner"><u class="underline-highlight">Past Events</u></h2>
-                <% @user.events.each do |event| %>
-                  <%# <% if %>
-                    <%# <% event.status %>
-                      <%# <div class="card shadow-sm"> %>
-                        <%# <% if event.photo.attached? %>
-                          <%# <%= cl_image_tag event.photo.key, height: 225, width: 100, crop: :pad, class: "card-img-top"%>
-                        <%# <% end %>
-                        <%# <div class="card-body"> %>
-                          <%# <%= event.name %>
-                          <%# <%= event.event_time %>
-                          <%# <%= event.price %>
-                          <%# <%= event.cuisine %>
-                          <%# <%= event.category %>
-                        <%# </div> %>
-                      <%# </div> %>
-                  <%# <% end %>
-                <%# <% end %>
-              <%# </div> %>
             </div>
           </div>
 
@@ -103,11 +80,4 @@
       </div>
     </div>
   </section>
-  <%# <div class="container vid">
-    <video width="320" height="240" controls>
-      <source src="https://res.cloudinary.com/dk3fbg9zm/video/upload/v1646839455/ChefVid_o5bxq7.mp4" type="video/mp4">
-      <source src="movie.ogg" type="video/ogg">
-      Your browser does not support the video tag.
-    </video>
-  </div> %>
 </main>
