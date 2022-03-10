@@ -35,7 +35,7 @@
                       <%reviews.each do |review|%>
                         <%ratings << review.rating%>
                       <%end%>
-                    <% avg = ratings.sum / ratings.count.to_f %>
+                    <% avg = ratings.sum / ratings.count.to_f.round(2) %>
                     <div class="index-card-review-rating">
                       <div class="index-card-rating"><i class="fa fa-solid fa fa-star"></i><%=avg%></div>
                       <div class="index-card-rating index-card-review-count">(<%= ratings.count %>)</div>
