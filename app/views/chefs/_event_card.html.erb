@@ -16,17 +16,15 @@
           <div class="ei-price">
             <p class="price-item" style="margin-right: 3px;">￡</p><%= event.price %>
           </div>
-          <div class="ei-cuisine">
-            <%= event.cuisine %>
-          </div>
+
           <div class="ei-cat">
             <%= event.category %>
           </div>
           <div class="d-flex justify-content-between align-items-center">
             <% if event.capacity > event.bookings.count %>
             <%= simple_form_for [event, @booking] do |f| %>
-            <%= f.button :submit, "Attend event", class: "btn btn-primary my-2" %>
-            <%= link_to "Map", event_path, class: "btn btn-secondary" %>
+            <%= f.button :submit, "Attend event", class: "btn btn-secondary my-2" %>
+            <%= link_to "Map", event_path, class: "btn btn-primary my-2" %>
             <% end %>
             <% else %>
             <p>The event is fully booked</p>
