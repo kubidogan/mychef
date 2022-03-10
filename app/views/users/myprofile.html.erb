@@ -21,10 +21,12 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="chef-overview">
+          
           <h1>Hello <%= current_user.name %></h1>
-            <% if current_user.avatar.attached? %>
-              <%= cl_image_tag current_user.avatar.key, class:"avatar-profile" %>
-            <% end %>
+          <% if current_user.avatar.attached? %>
+            <%= cl_image_tag current_user.avatar.key, class:"avatar-profile" %>
+          <% end %>
+
         </div>
           <% if current_user.typeofuser%>
             <%= link_to "View Profile", chef_path(current_user), class: "btn btn-secondary my-2-profile"%>

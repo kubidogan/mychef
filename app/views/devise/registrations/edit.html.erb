@@ -11,13 +11,15 @@
   <div class="form-group">
     <label class="col-12 form-label">
     <div class="d-flex justify-content-center align-items-center w-100%">
-      <% if current_user.avatar.present? %>
+      <% if current_user.avatar.attached? %>
         <%= cl_image_tag current_user.avatar.key, crop: :pad, class: "avatar-edit rounded-circle" %>
       <% else %>
         <img alt="image" class="rounded-circle" src="/assets/default_avatar_small.jpg">
       <% end %>
     </div>
-      <% if current_user.avatar.present? %><br />Current: <%= current_user.avatar.filename.to_s %><% end %>
+      <% if current_user.avatar.attached? %>
+        <br />Current: <%= current_user.avatar.filename.to_s %>
+      <% end %>
     </label>
     <div class="col-sm-8"><%= f.file_field :avatar, class: "form-control" %></div>
   </div>
