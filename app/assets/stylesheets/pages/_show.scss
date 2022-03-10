@@ -8,6 +8,7 @@
   width: 152px;
   position: absolute;
   left: 10px;
+  object-fit: cover;
   // margin-bottom: 20px;
 }
 
@@ -108,4 +109,21 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+  }
+
+
+  .nav-item {
+    border-radius: 5px !important;
+  }
+
+  #pills-event-tab {
+    border-radius: 5px;
+  }
+
+  #pills-review-tab {
+    border-radius: 5px;
+  }
+
+  #pills-experience-tab {
+    border-radius: 5px;
   }
