@@ -57,7 +57,9 @@
                 <% @user.reviewee_relationships.each do |review| %>
                   <p><strong><%= review.reviewer.name %></strong></p>
                   <p><%= review.comment %></p>
-                  <p id="stars"><%= "★" * review.rating.round(1) %></p>
+                  <% if review.rating.present? %>
+                    <p id="stars"><%= "★" * review.rating.round(1) %></p>
+                  <% end %>
                   <p><%= review.created_at %></p>
                 <% end %>
               </div>

@@ -2,6 +2,8 @@
   <div id="review-img">
     <% if @user.avatar.attached? %>
       <%= cl_image_tag @user.avatar.key %>
+    <% else %>
+      <%= image_tag "logo.png", alt: "default avatar"%>
     <% end %>
   </div>
 
